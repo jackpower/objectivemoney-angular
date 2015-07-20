@@ -32,6 +32,15 @@
     // execute the query
     $stmt->execute(array($userid,$pid,$usergender,$userage,$userjob,$score,$overall,$services,$good,$better,$anonymous,$name,$ipaddress));
 
+    // the message
+    $msg = "A review has been posted\n";
+
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    // send email
+    mail("jack@objectivemoney.co.za","Review posted",$msg);
+
     // disconnect from database
     Database::disconnect();
 
