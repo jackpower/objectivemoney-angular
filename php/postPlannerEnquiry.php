@@ -23,6 +23,15 @@
     // execute the query
     $stmt->execute(array($name,$email,$number, $ipaddress));
 
+    // the message
+    $msg = "A planner enquiry has been made\n";
+
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    // send email
+    mail("jack@objectivemoney.co.za","Review posted",$msg);
+
     // disconnect from database
     Database::disconnect();
 
