@@ -27,6 +27,15 @@
     // execute the query
     $stmt->execute(array($userid,$pid,$requirements,$usergender,$userage,$userjob,$phonenumber,$ipaddress));
 
+    // the message
+    $msg = "An enquiry has been made\n";
+
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    // send email
+    mail("jack@objectivemoney.co.za","Enquiry posted",$msg);
+
     // disconnect from database
     Database::disconnect();
 
