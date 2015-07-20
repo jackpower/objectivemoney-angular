@@ -40,6 +40,11 @@ omApp.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'pages/blog/introduction-to-financial-markets.html',
         controller: 'resourcesController'
     })
+    
+    .when('/what-fees-does-a-financial-planner-charge', {
+        templateUrl: 'pages/blog/what-fees-does-a-financial-planner-charge.html',
+        controller: 'resourcesController'
+    })
 
     .when('/login', {
         templateUrl: 'pages/plannerlogin.html',
