@@ -1,6 +1,6 @@
 <div class="container-fluid searchpage">
     <search-sidebar-large ng-show="searchquery.windowWidth >= 992" search-data="searchquery" planner-data="plannerprofiles" toggle="toggle()" sidebar-open="sidebarOpen"></search-sidebar-large>
-    <search-sidebar-small ng-show="searchquery.windowWidth < 992" search-data="searchquery" planner-data="plannerprofiles" toggle="toggle()" sidebar-open="sidebarOpen"></search-sidebar-small>{{searchquery.address}} Lat: {{searchquery.lat}} Long:{{searchquery.long}}
+    <search-sidebar-small ng-show="searchquery.windowWidth < 992" search-data="searchquery" planner-data="plannerprofiles" toggle="toggle()" sidebar-open="sidebarOpen"></search-sidebar-small>
     <!-- SEARCH RESULTS DISPLAY -->    
     <!-- create space for the search results -->
     <div ng-class="{ 'col-md-9': !sidebarOpen, 'col-md-11': sidebarOpen }">
