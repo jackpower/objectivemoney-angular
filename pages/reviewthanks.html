@@ -1,0 +1,18 @@
+<div class="container">    
+    <div ng-repeat="planner in plannerprofiles | filter: {pid: pid}:true" class="col-md-12">
+    <div class="row thanks">
+        <div class="thanksicon col-md-2"><em class="fa fa-thumbs-up" style="color: #203d6c; font-size: 80px;"></em>    </div> 
+        <h3 class="col-md-10 thankstext" >Thanks for leaving a review of {{planner.plannerfirstname }}. Well done, you have just helped thousands of other people find a financial planner!</h3>
+    </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="reviewbody-postreview">
+            <p id="searchprofilefooter-text"><a href="#/search" class="searchprofilefooter-link">REVIEW MORE PLANNERS&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></a></p>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="reviewbody-postreview">
+            <p id="searchprofilefooter-text"><a href="#/plannerprofilefull{{plannerprofiles.pid}}" class="searchprofilefooter-link">SEE YOUR REVIEW&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i></a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container userReview">
+    <!-- FILTER PLANNERS WHERE THE PLANNER ID MATCHES THE ROUTE PARAMETER, WHICH IS DEFINED BY THE PLANNER ID-->  
+
+    <div ng-repeat="planner in plannerprofiles | filter: {pid: pid}:true">
+        <div class="review row">
+            <div class="col-sm-12">
+                <div class="row reviewheader">
+                        <img class="reviewheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                        <p id="reviewheader-name">{{ planner.plannerfirstname }} {{ planner.plannersurname }}</p>
+                        <p id="reviewheader-company">{{ planner.company }}</p>
+                        <p id="reviewheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
+                </div>
+            </div>
+        </div>    
+        <form name="userEnquiry">
+        <div class="reviewbody-details row">
+                <p class="reviewbody-header">About You</p>
+                <p class="reviewbody-header-detail">Please provide your phone number so that {{  planner.plannerfirstname }} can contact you<span class="reqAstrix">&nbsp;&#42</span></p>
+                <input type="tel" class="form-control reviewbody-header-answer reviewbody-header-input" name="phonenumber" id="phonenumber" ng-model="enquiry.phonenumber" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^\d+$/"/>
+                <div class="help-block reviewbody-info-wordsleft" ng-messages="userEnquiry.phonenumber.$error">
+                    <p ng-message="minlength">The number you entered is too short.</p>
+                    <p ng-message="maxlength">The number you entered is too long.</p>
+                    <p ng-message="pattern">Please only use numbers.</p> 
+                </div>
+                <p class="reviewbody-header-detail">What is your gender?</p>
+                    <label class="radio-inline reviewbody-header-answer"><input type="radio" name="gender" value="male" ng-model="enquiry.usergender">Male</label>
+                    <label class="radio-inline reviewbody-header-answer"><input type="radio" name="gender" value="female" ng-model="enquiry.usergender">Female</label>
+                <p class="reviewbody-header-detail">What is your age?</p>
+                    <input type="number" class="form-control reviewbody-header-answer reviewbody-header-input" id="age" min="1" ng-model="enquiry.userage"/>
+                <p class="reviewbody-header-detail">What is your profession?</p>
+                    <input type="text" class="form-control reviewbody-header-answer reviewbody-header-input" id="profession" ng-model="enquiry.userjob"/>
+            
+            <div>
+                <p class="reviewbody-header">Your Requirements</p>
+                
+                <p class="reviewbody-header-detail">Let {{  planner.plannerfirstname }} know a little bit about what you're looking for</p>
+                <textarea class="form-control reviewbody-header-textinput" rows="5" ng-model="enquiry.requirements" ng-disabled="overflow" ng-keypress="updateBody();"></textarea>
+                <p class="reviewbody-info-wordsleft">{{ enquiry.wordsleft }} characters left</p>
+                
+            </div>
+            
+            <div>
+                <div ng-class="{ 'reviewbody-button': !userEnquiry.$invalid, 'reviewbody-buttondisabled': userEnquiry.$invalid }">
+                    <p id="searchprofilefooter-text"><button class="reviewbody-rating-button" ng-click="postEnquiry(); postSearch()" data-ng-disabled="userEnquiry.$invalid">SEND YOUR ENQUIRY&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i></button></p>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

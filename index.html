@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="omApp">
+    <head>
+        <title>Objective Money</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="Font-Awesome-master/css/font-awesome.min.css" />
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
+        <link href='toaster/toaster.css' rel='stylesheet' type='text/css'>
+        
+        <!-- load CSS files locally -->
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="angular-slider-master/slider.css" />
+        <link rel="stylesheet" href="animate.css" />
+        
+        <!-- load angular and additional precompiled services -->
+        <script src="//code.angularjs.org/1.4.0-rc.2/angular.min.js"></script>
+        <script src="//code.angularjs.org/1.4.0-rc.2/angular-route.min.js"></script>
+        <script src="//code.angularjs.org/1.4.1/angular-animate.min.js"></script>
+        <script src="//code.angularjs.org/1.4.0-rc.2/angular-messages.min.js"></script>
+        <script src="//code.angularjs.org/1.4.0/angular-resource.min.js"></script>
+        <script src="toaster/toaster.js"></script>
+        <script src="ui-bootstrap-0.13.0.min.js"></script>
+        <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+        <script src="angular-slider-master/slider.js"></script>
+        <script src="//maps.googleapis.com/maps/api/js?libraries=places"></script>
+        <script src="vs-google-autocomplete.min.js"></script>
+        <script src="angulartics.min.js"></script>
+        <script src="angulartics-ga.min.js"></script>
+        
+        <!-- load angular app -->
+        <script src="modules/omApp.js"></script>
+        
+        <!-- load custom services -->
+        <script src="services/services.js"></script>
+        <script src="services/data.js"></script>
+        
+        <!-- load angular controllers -->
+        <script src="controllers/searchController.js"></script>
+        <script src="controllers/resourcesController.js"></script>
+        <script src="controllers/plannerRegController.js"></script>
+        
+        <!-- directives -->
+        <script src="directives/directive.js"></script>
+        
+        <!-- sharethis -->
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "2ee3d7a9-375f-4eeb-a5cd-748d632a2188", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+        
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  	ga('create', 'UA-62126764-1', { 'cookieDomain': 'none' });
+	</script>
+    
+    </head>
+        <body>
+            <!-- create a navbar that is collapsable in a mobile view -->
+            <nav id="navbar-example" class="navbar navbar-inverse navbar-static" role="navigation" ng-controller="searchController">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#/">       <img id="navbarlogo" src="./img/logo/logo-white.png"></a>
+                    </div>
+                    <div collapse="isCollapsed" class="navbar-collapse bs-js-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#/">Home</a></li>
+                                <li><a href="#/search">Search</a></li>
+                                <li><a href="#/resources">Resources</a></li>
+                                <li><a href="#/login">Planner Registration</a></li>
+                            </ul>
+                        </ul>
+                        <!-- create a logout sign that shows when a user is logged in, position this on the right of the navbar -->
+                        <ul ng-show="authenticated === true" class="nav navbar-nav pull-right logoutlink">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a ng-controller="searchController" ng-click="logout(); changeAuth()">Logout</a></li>
+                            </ul>
+                        </ul>
+                    </div><!-- /.nav-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>      
+        
+        <!-- Create container for app views -->
+        <div class="wrapper">
+            <!-- set empty div for views, autoscroll means that page scrolls to top when user clicks through -->
+            <div ng-view autoscroll="true"></div>
+        <div class="push"></div>
+		</div>
+        <div class="footer">
+            <footer>
+                <div>
+                        <div id="footershare" class="col-sm-6">
+                                <span class='st_twitter_large' displayText='Tweet'></span>
+                                <span class='st_facebook_large' displayText='Facebook'></span>
+                                <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                                <span class='st_googleplus_large' displayText='Google +'></span>
+                                <span class='st_email_large' displayText='Email'></span>
+                        </div>
+                        <div id="footercontact" class="col-sm-6">
+                            <p>Contact: jack@objectivemoney.co.za | Copyright &copy; 2015 Objective Money PTY LTD</p>
+                        </div>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+    <!-- toaster-container that shows when a user log ins and log out [CURRENTLY THE TOASTER SHOWS FOR TOO LONG AND TIME OUT FUNCTION DOES NOT CHANGE TOASTER DISPLAY TIME] -->
+    <toaster-container toaster-options="{'time-out': 2000}"></toaster-container>
+</html>
