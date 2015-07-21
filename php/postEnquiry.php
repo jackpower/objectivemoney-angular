@@ -17,15 +17,26 @@
     $userjob = $request->enquiry->userjob;
     $phonenumber = $request->enquiry->phonenumber;
     $ipaddress = $_SERVER['REMOTE_ADDR'];
+    $user_name = $request->user_name;
+    $user_email = $request->user_email;
 
     // a query get all the records from the users table
-    $sql = "INSERT INTO user_enquiry (userid, pid, requirements, usergender, userage, userjob, phonenumber,ip) values(?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO user_enquiry (userid, pid, requirements, usergender, userage, userjob, phonenumber,ip, user_name, user_email) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // use prepared statements, even if not strictly required is good practice
     $stmt = $pdo->prepare( $sql );
 
     // execute the query
-    $stmt->execute(array($userid,$pid,$requirements,$usergender,$userage,$userjob,$phonenumber,$ipaddress));
+    $stmt->execute(array($userid,$pid,$requirements,$usergender,$userage,$userjob,$phonenumber,$ipaddress, $user_name, $user_email));
+
+    // a query get all the records from the users table
+    $sqlb = "UPDATE user_enquiry SET planner_firstname = (SELECT plannerfirstname FROM planner_details WHERE planner_details.pid=user_enquiry.pid)";
+
+    // use prepared statements, even if not strictly required is good practice
+    $stmtb = $pdo->prepare( $sqlb );
+
+    // execute the query
+    $stmtb->execute();
 
     // the message
     $msg = "An enquiry has been made\n";
