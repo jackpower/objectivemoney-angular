@@ -896,6 +896,11 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.plannerprofiles.overStar = value;
     };
   
+    //Manually load share this buttons for thanks pages
+    $scope.loadShareThis = function() {
+        stButtons.makeButtons();
+      }    
+    
 }]);
 
 
