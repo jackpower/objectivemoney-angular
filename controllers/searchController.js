@@ -83,7 +83,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     //Post enquiry request to database
     $scope.enquiry={ requirements:'', usergender:'',userage:'',userjob:''};
     $scope.postEnquiry = function () {
-    $http.post('php/postEnquiry.php',{ 'enquiry' : $scope.enquiry, 'userid' : $scope.userid, 'pid': $scope.pid})
+    $http.post('php/postEnquiry.php',{ 'enquiry' : $scope.enquiry, 'userid' : $scope.userid, 'pid': $scope.pid, 'user_name': $scope.name, 'user_email': $scope.email})
             .success(function (result) {
 
                 console.log(result);
