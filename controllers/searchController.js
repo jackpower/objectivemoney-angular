@@ -899,7 +899,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     //Manually load share this buttons for thanks pages
     $scope.loadShareThis = function() {
         stButtons.makeButtons();
-      }    
+      };    
     
 }]);
 
