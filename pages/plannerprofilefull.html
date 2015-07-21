@@ -180,6 +180,9 @@
                                     </span>
                                     <span class="fullprofile-aboutAndReviews-reviewBody-date pull-right">{{ review.created.substring(0,10) | date:'dd-MM-yyyy' }}</span>
                                 </p>
+                                    <span id="searchprofileheader-verifiedInfo" ng-show="review.validated === '1'">
+                                        <p><i class="fa fa-check-circle-o verifiedprofileicon"></i>&nbsp;Verified Review</p>
+                                    </span>
                                 <span ng-hide="review.overall.length === 0 || planner.verified === '0'">
                                     <p class="fullprofile-aboutAndReviews-reviewBody-Title"><b>Overall how would you describe your experience with {{  planner.plannerfirstname }}?</b></p>
                                     <p class="fullprofile-aboutAndReviews-reviewBody-Body">{{ review.overall }}</p>
