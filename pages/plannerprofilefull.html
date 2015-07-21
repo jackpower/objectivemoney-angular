@@ -24,6 +24,7 @@
                         <span ng-show="planner.RFP === '1'">RFP</span>
                         <span ng-show="planner.FSA === '1'">FSA</span>
                         <span ng-show="planner.undisclosed === '1'">Not Registered With FPI</span>
+                        <span ng-show="planner.Qual_Other.length > 0">, {{planner.Qual_Other}}</span>
                 </p>
                 <span ng-show="planner.verified === '1'">
                 <p id="fullprofilebody-infoheader"><b>EXPERIENCE</b></p>
