@@ -1,4 +1,5 @@
 <div class="container-fluid searchpage">
+
     <search-sidebar-large ng-show="searchquery.windowWidth >= 992" search-data="searchquery" planner-data="plannerprofiles" toggle="toggle()" sidebar-open="sidebarOpen"></search-sidebar-large>
     <search-sidebar-small ng-show="searchquery.windowWidth < 992" search-data="searchquery" planner-data="plannerprofiles" toggle="toggle()" sidebar-open="sidebarOpen"></search-sidebar-small>
     <!-- SEARCH RESULTS DISPLAY -->    
@@ -6,6 +7,6 @@
     <div ng-class="{ 'col-md-9': !sidebarOpen, 'col-md-11': sidebarOpen }">
 
     <!-- call the custom directive that displays the shortend profiles of planners -->
-        <planner-profile-search planner-data="plannerprofiles" search-data="searchquery" client-value="client1year(monthly,lump)"></planner-profile-search>
+        <planner-profile-search planner-data="plannerprofiles" search-data="searchquery" client-value="client1year(monthly,lump)" ></planner-profile-search>
     </div>
 </div>

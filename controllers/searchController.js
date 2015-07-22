@@ -1,10 +1,13 @@
-omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$window', '$location', 'searchquery', 'enquiry', 'reviews', '$http', 'Data','$timeout', function($scope, $routeParams, $rootScope, $window, $location, searchquery, enquiry, reviews, $http, Data, $timeout) {
+omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$window', '$location', 'searchquery', 'enquiry', 'reviews', '$http', 'Data','$timeout', '$anchorScroll', function($scope, $routeParams, $rootScope, $window, $location, searchquery, enquiry, reviews, $http, Data, $timeout, $anchorScroll) {
 
     //Create empty objects for users searches, enquiries and reviews
     
     $scope.searchquery = {};
     $scope.enquiry = {};
     $scope.reviews = {};
+
+    $scope.fname = {};
+    $scope.fname.name = "bob"
     
     //Inject the searchquery, enquiry and reviews service to ensure data persistency moving across pages in Search Controller
     
@@ -20,11 +23,13 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $http.get('php/getPlannerReviews.php')
     .success(function(data) {
         $scope.plannerReviews = data;
+
     });
     
     //POST REQUESTS
     //Post login request
     $scope.login = {};
+
     $scope.doLogin = function (customer) {
         Data.post('login', {
             customer: customer
@@ -237,21 +242,28 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
 		$scope.plannerprofiles = response.data;
         
     //SET ATTRIBUTES OF PAGIATION DIRECTIVE ON SEARCH PAGE
+
     $scope.plannersFilterd=[];
     $scope.plannerprofiles.currentPage = 1; //Specifiy the first page to be shown
     $scope.plannerprofiles.itemsPerPage = 4; //Number of items to show per page
     $scope.plannerprofiles.maxSize = 5; //Number of pager buttons to show
 
+    
     $scope.plannerprofiles.setPage = function (pageNo) {
-    $scope.plannerprofiles.currentPage = pageNo;
-    };
+        $scope.plannerprofiles.currentPage = pageNo;
         
+    };
+  
     $scope.setPageNameChange = function() {
+
         if($scope.searchquery.querybol) {
-        $scope.plannerprofiles.setPage(1);
+            $scope.plannerprofiles.setPage(2);
         }
     };
-
+    $scope.plannerprofiles.pageChanged = function(){
+       
+       $anchorScroll('navbar-example');
+    }
     //DEAL WITH GOOGLE AUTOCOMPLETE ADDRESSES [CURRENTLY NOT WORKING BECAUSE COMPONENT TAKEN OUT OF AUTOCOMPLETE DIRECTIVE IN ORDER THAT IT DOES NOT RESET ONCE USER GOES OFF SEARCH PAGE]
     //Restricts addresses to South Africa only
     
@@ -601,6 +613,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         };
         };
     };
+
     
     //SEE IF ANY SERVICE CHOICES MATCH PLANNER DATA
     //Function to see if any potential services boxes have been picked yet, returns 1 if so. This is used as the comparator against the planner service score. Without all profiles would be filtered when no service is selected.
@@ -705,12 +718,12 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         
         //For loops to see if languages match
         for (i = 0; i < $scope.plannerprofiles.length; i++) {
-        if($scope.plannerprofiles[i].servicescore >= $scope.searchquery.reqservicescore) {
-            $scope.plannerprofiles[i].reqservicecompara = 1;
-        }
-        else {
-            $scope.plannerprofiles[i].reqservicecompara = 0;
-        };
+            if($scope.plannerprofiles[i].servicescore >= $scope.searchquery.reqservicescore) {
+                $scope.plannerprofiles[i].reqservicecompara = 1;
+            }
+            else {
+                $scope.plannerprofiles[i].reqservicecompara = 0;
+            };
         };
     };
     
@@ -795,8 +808,9 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.sidebarOpen = false;
     $scope.toggle = function() {
         $scope.sidebarOpen = !$scope.sidebarOpen;
-    };   
-    
+    }; 
+
+  
     //Create a function that tracks whether the full review in the review page is open or not
     
     $scope.fullReviewOpen = false;
@@ -893,8 +907,9 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     
     //Set the star rating when a user hovers over the star
     $scope.plannerprofiles.hoveringOver = function(value) {
-    $scope.plannerprofiles.overStar = value;
+        $scope.plannerprofiles.overStar = value;
     };
+   
   
     //Manually load share this buttons for thanks pages
     $scope.loadShareThis = function() {
@@ -916,6 +931,7 @@ omApp.directive("plannerProfileSearch", function() {
             plannerData: "=",
             searchData: "=",
             clientValue: "&"
+            
        }
     }
 });
