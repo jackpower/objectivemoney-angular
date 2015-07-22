@@ -1298,6 +1298,18 @@ footer>div>ul>li {
     padding-bottom:10px;
 }
 
+.searchinfo-moreinfo.ng-hide-remove {
+    animation:1.5s pulse ease;
+}
+
+.searchinfo-address.ng-hide-remove {
+    animation:1.5s pulse ease;
+}
+
+.searchinfo-noplanner.ng-hide-remove {
+    animation:1.5s pulse ease;
+}
+
 /*
 .about {
     margin-top: 60px;
