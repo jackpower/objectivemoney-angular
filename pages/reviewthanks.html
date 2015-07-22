@@ -1,31 +1,52 @@
-<div class="container">    
-    <div ng-repeat="planner in plannerprofiles | filter: {pid: pid}:true" class="col-sm-12" ng-init="loadShareThis()">
-    <div class="row thanks">
-        <div class="thanksicon col-sm-2"><em class="fa fa-thumbs-up" style="color: #203d6c; font-size: 80px;"></em>    </div> 
-        <div class="col-sm-10">
-        <h3 class="thankstext">Thanks for leaving a review of {{planner.plannerfirstname }}. Well done, you have just helped thousands of other people find a financial planner!
-        </h3>
-        <h3 class="thankstext">
-        Do you know someone who might find Objective Money useful? Let them know through your preferred method.
-        <div class="thanksshareicons">
-            <span class='st_twitter_large' displayText='Tweet'></span>
-            <span class='st_facebook_large' displayText='Facebook'></span>
-            <span class='st_linkedin_large' displayText='LinkedIn'></span>
-            <span class='st_googleplus_large' displayText='Google +'></span>
-            <span class='st_email_large' displayText='Email'></span>
-        </div>
-        </h3>
-        </div>                
-    </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="reviewbody-postreview">
-            <p id="searchprofilefooter-text"><a href="#/search" class="searchprofilefooter-link">REVIEW MORE PLANNERS&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></a></p>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="reviewbody-postreview">
-            <p id="searchprofilefooter-text"><a href="#/plannerprofilefull{{plannerprofiles.pid}}" class="searchprofilefooter-link">SEE YOUR REVIEW&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i></a></p>
+<div class="container userReview">
+    <!-- FILTER PLANNERS WHERE THE PLANNER ID MATCHES THE ROUTE PARAMETER, WHICH IS DEFINED BY THE PLANNER ID-->  
+    <div ng-repeat="planner in plannerprofiles | filter: {pid: pid}:true" ng-init="loadShareThis()">
+        <div class="review row">
+            <div class="col-sm-12">
+                <div class="row reviewheader">
+                        <img class="reviewheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                        <p id="reviewheader-name">{{ planner.plannerfirstname }} {{ planner.plannersurname }}</p>
+                        <p id="reviewheader-company">{{ planner.company }}</p>
+                        <p id="reviewheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
+                </div>
+            </div>
+        </div>    
+        <div class="thanks-body">
+            <div class="row">
+                <div class="col-sm-2 thanksicon">
+                    <i class="fa fa-thumbs-up"></i>
+                </div>
+                <div class="col-sm-10">
+                    <h3 class="thankstext">Thanks for leaving a review of {{planner.plannerfirstname }}. Well done, you have just helped thousands of other people find a financial planner!</h3>
+                </div>
+            </div><hr class="thanks-seperator">
+            <div class="row">
+                <div class="col-sm-2 thanksicon">
+                    <i class="fa fa-share-square"></i>
+                </div>
+                <div class="col-sm-10">
+                    <h3 class="thankstext">Want more people to know about your review? Tell the world through your preferred method below.</h3>
+                    <div class="thanksshareicons">
+                        <span class='st_twitter_large' displayText='Tweet'></span>
+                        <span class='st_facebook_large' displayText='Facebook'></span>
+                        <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                        <span class='st_googleplus_large' displayText='Google +'></span>
+                        <span class='st_email_large' displayText='Email'></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="reviewbody-postreview">
+                        <p id="searchprofilefooter-text"><a href="#/search" class="searchprofilefooter-link">REVIEW MORE PLANNERS&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></a></p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="reviewbody-postreview">
+                        <p id="searchprofilefooter-text"><a href="#/plannerprofilefull{{plannerprofiles.pid}}" class="searchprofilefooter-link">SEE YOUR REVIEW&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i></a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

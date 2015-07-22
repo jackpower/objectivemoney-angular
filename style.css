@@ -360,12 +360,24 @@ footer>div>ul>li {
     padding:10px;
 }
 
-.thanks{
-    padding:20px;
+.thanks-body {
+    background-color: #e8e8e8;
+    margin-top:10px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:15px;
+    margin-left:-15px;
+    margin-right:-15px;
+}
+
+.thanks-seperator {
+    border-top-color: #f8650d;
 }
 
 .thanksicon {
-    text-align: center;
+    font-size:60px;
+    color: #203d6c;
+    text-align:center;
 }
 
 .thankstext {
@@ -1284,7 +1296,6 @@ footer>div>ul>li {
 .thanksshareicons{
     padding-top:20px;
     padding-bottom:10px;
-    
 }
 
 /*
