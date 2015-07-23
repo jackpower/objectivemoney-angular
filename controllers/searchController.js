@@ -146,7 +146,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             });
     };
 
-    //CREATE ALERT TO PROMPT USER TO COMPLETE FORM ONCE ON SEARCH PAGE
+    /*//CREATE ALERT TO PROMPT USER TO COMPLETE FORM ONCE ON SEARCH PAGE
     //Define alert message
     $scope.alerts = [
     { type: 'info', msg: 'Not seeing many planners? Let us know a bit more about you in the search bar and more planners will be able to help you.' },
@@ -161,7 +161,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.showAlert = false;
     $timeout(function(){
       $scope.showAlert = true;
-    }, 4000);
+    }, 4000);*/
     
 
     //SET VARIABLES TO A DEFAULT VALUE IN ORDER FOR THEM TO BE DEFINED THE POST REQUEST TO THE DATABASE, OTHERWISE THE POST REQUEST IS REJECTED
