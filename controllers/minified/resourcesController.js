@@ -1,0 +1,1 @@
+omApp.controller("resourcesController",["$scope","$http","$routeParams",function(a,b,c){}]);omApp.directive("blogExcerpt",function(){return{restrict:"EC",templateUrl:"directives/blogexcerpt.html",replace:!0,scope:{blogPost:"="}}});
