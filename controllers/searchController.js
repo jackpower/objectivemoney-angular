@@ -914,7 +914,35 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     //Manually load share this buttons for thanks pages
     $scope.loadShareThis = function() {
         stButtons.makeButtons();
-      };    
+    };
+    
+  $scope.myInterval = 1500;
+  $scope.slides = [
+    {
+      image: 'psg_logo'
+    },
+    {
+      image: 'liberty_logo'
+    },
+    {
+      image: 'oldMutual_logo'
+    },
+    {
+      image: 'investec_logo'
+    },
+    {
+      image: 'hollard_logo'
+    },
+    {
+      image: 'discovery_logo'
+    },
+    {
+      image: 'sanlam_logo'
+    },
+    {
+      image: 'stanlib_logo'
+    }
+  ];
     
 }]);
 
@@ -965,5 +993,16 @@ omApp.directive("searchSidebarSmall", function() {
             sidebarOpen: "=",
             plannerData: "="
        }
+    }
+});
+
+omApp.directive('disableAnimation', function($animate){
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attrs){
+            $attrs.$observe('disableAnimation', function(value){
+                $animate.enabled(!value, $element);
+            });
+        }
     }
 });
