@@ -52,6 +52,19 @@
         <p class="homepage-body-icons-text">Click to automatically schedule a meeting with your chosen planner at a time that suits you.</p>
     </div>
 </div>
+    <div class="row homepage-body-carousel-header">
+        <div class="col-sm-12 homepage-body-header">
+        <h2><b>Our Planners Partner With The Biggest Companies In South Africa</b></h2>
+        </div>
+    </div>
+    <div class="row homepage-body-carousel">
+        <carousel interval="myInterval" disable-animation="true">
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="/angularTestv13/img/sitephotos/{{slide.image}}.png" alt="{{slide.image}}" style="margin:auto;">
+            </slide>
+        </carousel>
+    </div>
+
     <div class="container-fluid homepage-body-video">
             <p class="homepage-body-video-text">Watch our short video to see how it works in more detail</p>
                 <div class="videoWrapper">
@@ -98,52 +111,4 @@
     </div>
     </div>
 
-</div>
-
-<!--
-    <div class="container homepageinfo">
-
-<div>
-    <div class="col-sm-12">
-        <h2>How Objective Money Helps You</h2>
-    </div>
-    <div class="row">
-    <div class="col-sm-4">
-        <h4><em class="fa fa-thumbs-o-up homepageicon"></em></h4>
-        <h3>Independent</h3>
-        <p>All of our advisers have been independently verified, helping you to avoid any sharks.</p>
-    </div>
-
-    <div class="col-sm-4">
-        <h4><em class="fa fa-star homepageicon"></em><em class="fa fa-star homepageicon"></em><em class="fa fa-star homepageicon"></em><em class="fa fa-star homepageicon"></em><em class="fa fa-star homepageicon"></em></h4>
-        <h3>User Reviewed</h3>
-        <p>All of our advisers are reviewed by genuine users, helping you make sure that the adviser is the right match for you.</p>
-    </div>
-
-    <div class="col-sm-4">
-        <h4><em class="fa fa-search homepageicon"></em></h4>
-        <h3>Tailored</h3>
-        <p>Search functionality lets you specify your ideal adviser; from specialisms, preferred language to even gender.</p>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-sm-4">
-        <h4><em class="fa fa-crosshairs homepageicon"></em></h4>
-        <h3>Accurate</h3>
-        <p>Instead of just asking one person their opinion our user reviews let you ask everyone what they think.</p>
-    </div>
-    
-    <div class="col-sm-4">
-        <h4><em class="fa fa-clock-o homepageicon"></em></h4>
-        <h3>Quick</h3>
-        <p>No need for lengthy internet research, enquiry calls or getting hold of friends and family to help you.</p>
-    </div>
-        
-    <div class="col-sm-4">
-        <h4><em class="fa fa-money homepageicon"></em></h4>
-        <h3>Free</h3>
-        <p>Our service is entirely free of charge.</p>
-    </div>
-    </div>
-    </div>
 </div>
