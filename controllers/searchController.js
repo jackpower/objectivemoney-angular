@@ -257,7 +257,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.setPageNameChange = function() {
 
         if($scope.searchquery.querybol) {
-            $scope.plannerprofiles.setPage(2);
+            $scope.plannerprofiles.setPage(1);
         }
     };
     $scope.plannerprofiles.pageChanged = function(){
@@ -773,7 +773,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             else {
                 $scope.searchquery.querybol = true;
             }
-    }
+    };
     
     //Add a watcher to see if the input fields of the search query change and run the relevance and client distance functions
 
