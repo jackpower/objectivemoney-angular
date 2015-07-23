@@ -1310,6 +1310,28 @@ footer>div>ul>li {
     animation:1.5s pulse ease;
 }
 
+
+.carousel-indicators {
+    display: none;
+}
+
+.homepage-body-carousel-header {
+    background-color:#203d6c;
+    text-align:center;
+    color: #fff;
+}
+
+.homepage-body-carousel{
+    padding-top: 30px;
+}
+
+.carousel-control.right {
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(32,61,108,.5) 100%);
+}
+
+.carousel-control.left {
+    background-image: linear-gradient(to right,rgba(32,61,108,.5) 0,rgba(0,0,0,.0001) 100%);
+}
 /*
 .about {
     margin-top: 60px;
