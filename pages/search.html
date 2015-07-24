@@ -7,6 +7,6 @@
     <div ng-class="{ 'col-md-9': !sidebarOpen, 'col-md-11': sidebarOpen }">
 
     <!-- call the custom directive that displays the shortend profiles of planners -->
-        <planner-profile-search planner-data="plannerprofiles" search-data="searchquery" client-value="client1year(monthly,lump)" ></planner-profile-search>
-    </div>
+        <planner-profile-search planner-data="plannerprofiles" search-data="searchquery" client-value="client1year(monthly,lump)" post-search-unfulfilled="postSearchUnfulfilled()"></planner-profile-search>
+    </div> 
 </div>
