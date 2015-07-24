@@ -18,6 +18,7 @@
             <p><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;<b>Sorry.</b> We don't have any planners that meet your requirements right now.</p>
         </div>
     </div>
+    <span ng-if="(searchData.monthlysalary !== 0 || searchData.lumpsum) !== 0 && plannersFilterd.length === 0 && searchData.address.name.length > 0" ng-init="postSearchUnfulfilled()"></span>
 <div class="row searchprofiles">
     
     <div ng-show="searchData.querybol" ng-repeat="planner in (plannersFilterd = (plannerData | filter: {'plannerfullname': searchData.query} | orderBy:'relevance':true)).slice(((plannerData.currentPage-1)*plannerData.itemsPerPage), ((plannerData.currentPage)*plannerData.itemsPerPage))">
