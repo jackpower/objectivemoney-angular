@@ -3,6 +3,7 @@ omApp.controller('plannerRegController', ['$scope', '$location', '$log', 'planne
     
     $scope.planner = {};
     $scope.planner={ name:'', email:'',number:''};
+    
     $scope.submit = function() {
         $http.post('php/postPlannerEnquiry.php',{ 'planner' : $scope.planner })
                 .success(function (result) {

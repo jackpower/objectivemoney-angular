@@ -23,13 +23,7 @@ AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 
 RewriteEngine On
-RewriteCond %{HTTP_HOST} !^www\.
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI}$1 [R=301,L]
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}$1
-
-Redirect 301 /find-a-planner https://www.objectivemoney.co.za/#/search
-Redirect 301 /about-us/our-mission-2 https://www.objectivemoney.co.za/#/
-Redirect 301 /about-us/our-team https://www.objectivemoney.co.za/#/
-Redirect 301 /about-us https://www.objectivemoney.co.za/#/
-Redirect 301 /about-us/contact-us https://www.objectivemoney.co.za/#/
+##RewriteCond %{HTTP_HOST} !^www\.
+##RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI}$1 [R=301,L]
+##RewriteCond %{HTTPS} off
+##RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}$1

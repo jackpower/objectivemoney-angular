@@ -129,12 +129,13 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     
     $scope.runSearchOnProfileView();*/
 
-    //Post review request to database    
-    $scope.reviews={clientgender:'', clientage:'',clientjob:'',score:'',overall:'',services:'',good:'',better:''};
-    $scope.postReview = function () {    
-    $http.post('php/postReview.php',{ 'reviews' : $scope.reviews, 'userid' : $scope.userid, 'pid': $scope.pid, 'name' : $scope.name })
-            .success(function (result) {
+    //Post review request to database  
 
+    $scope.reviews={clientgender:'', clientage:'',clientjob:'',score:'',overall:'',services:'',good:'',better:'', postRegex:/(?!.*)/, postcode:""};
+    $scope.reviews.postRegex = "foo";  
+    $scope.postReview = function () {    
+        $http.post('php/postReview.php',{ 'reviews' : $scope.reviews, 'userid' : $scope.userid, 'pid': $scope.pid, 'name' : $scope.name })
+            .success(function (result) {
                 console.log(result);
                 $location.path('/reviewthanks' + $routeParams.id);
 
@@ -298,6 +299,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             };
           
     $scope.plannerprofiles.transformName();
+
         
     //Function to translate short hand state to full name
     
@@ -889,6 +891,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
 					$scope.reviews.betterwordsleft = $scope.maxchar - newValue.length;
 				}
     });
+
     
     //Set the necessary parameters for the star rating functionality    
     $scope.rate = 0;
@@ -976,6 +979,7 @@ omApp.directive("searchSidebarLarge", function() {
             toggle: "&",
             sidebarOpen: "=",
             plannerData: "="
+
        }
     }
 });
