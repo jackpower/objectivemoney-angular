@@ -119,6 +119,21 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             });
     };
     
+    //Post search request to database
+    $scope.postSearchUnfulfilled = function () {
+    $http.post('php/postSearchUnfulfilled.php',{ 'searchquery' : $scope.searchquery })
+            .success(function (result) {
+
+                console.log(result);
+
+            })
+            .error(function (data, status) {
+
+                console.log(data);
+
+            });
+    };    
+    
     /*$scope.runSearchOnProfileView = function() {
         switch (window.location.hash) {
         case "#/plannerprofilefull" + $routeParams.id:
@@ -961,7 +976,8 @@ omApp.directive("plannerProfileSearch", function() {
         scope: {
             plannerData: "=",
             searchData: "=",
-            clientValue: "&"
+            clientValue: "&",
+            postSearchUnfulfilled: "&"
             
        }
     }
@@ -1000,7 +1016,7 @@ omApp.directive("searchSidebarSmall", function() {
     }
 });
 
-omApp.directive('disableAnimation', function($animate){
+omApp.directive('disableAnimation', ['$animate',function($animate){
     return {
         restrict: 'A',
         link: function($scope, $element, $attrs){
@@ -1009,4 +1025,4 @@ omApp.directive('disableAnimation', function($animate){
             });
         }
     }
-});
+    }]);
