@@ -36,7 +36,7 @@
         
                 <div class="form-group">
                     <label class="plannerSearch-question" for="monthlysalary">What is your monthly gross salary?</label>
-                        <slider class="plannerSearch-slider" id="monthlysalary" name="monthlysalary" floor="0" ceiling="200000" step="10000" ng-model="searchData.monthlysalary"></slider>
+                        <slider class="plannerSearch-slider" id="monthlysalary" name="monthlysalary" floor="0" ceiling="200000" step="10000" ng-model="searchData.monthlysalary" analytics-on="click" analytics-event="Monthly Salary" analytics-category="Commands"></slider>
                     <div name="monthlysalary" class="form-control plannerSearch-answer-slider">
                         <span ng-show="searchData.monthlysalary < 200000">{{ searchData.monthlysalary | currency : "R" : 0 }}</span>
                         <span ng-show="searchData.monthlysalary === 200000">R200,000+</span>
@@ -47,7 +47,7 @@
         
                 <div class="form-group">
                     <label class="plannerSearch-question" for="lumpsum">Do you have a lump sum to be advised on, if so how much?</label>
-                    <slider class="plannerSearch-slider" id="lumpsum" name="lumpsum" floor="0" ceiling="5000000" step="50000" ng-model="searchData.lumpsum"></slider>
+                    <slider class="plannerSearch-slider" id="lumpsum" name="lumpsum" floor="0" ceiling="5000000" step="50000" ng-model="searchData.lumpsum" analytics-on="click" analytics-event="Lump Sum" analytics-category="Commands"></slider>
                     <div name="lumpsum" class="form-control plannerSearch-answer-slider">
                         <span ng-show="searchData.lumpsum < 5000000">{{ searchData.lumpsum | currency : "R" : 0 }}</span>
                         <span ng-show="searchData.lumpsum === 5000000">R5,000,000+</span>
