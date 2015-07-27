@@ -9,7 +9,7 @@ omApp.config(['$routeProvider', function ($routeProvider) {
     .when('/', {
         templateUrl: 'pages/home.html',
         controller: 'searchController'
-    })
+    })    
     
     .when('/search', {
         templateUrl: 'pages/search.html',

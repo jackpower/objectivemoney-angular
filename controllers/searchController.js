@@ -119,12 +119,15 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             });
     };
     
+    
+    
     //Post search request to database
     $scope.postSearchUnfulfilled = function () {
     $http.post('php/postSearchUnfulfilled.php',{ 'searchquery' : $scope.searchquery })
             .success(function (result) {
 
                 console.log(result);
+                console.log("data sent");
 
             })
             .error(function (data, status) {
@@ -133,6 +136,15 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
 
             });
     };    
+    
+    $scope.searchquery.formFilled = false;
+    $scope.checkFormCompleteness = function() {
+        $timeout( function(){
+        if(($scope.searchquery.monthlysalary !== 0 || $scope.searchquery.lumpsum !== 0) && $scope.searchquery.address.name.length > 0) {
+            $scope.searchquery.formFilled = true;
+        };
+        },1000);
+    };
     
     /*$scope.runSearchOnProfileView = function() {
         switch (window.location.hash) {
@@ -810,6 +822,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
                 $scope.getPlannerfilter();
                 $scope.getQuerylen();
                 $scope.setPageNameChange();
+                $scope.checkFormCompleteness();
                 /*$scope.getErrorMessage();*/
     });
     
