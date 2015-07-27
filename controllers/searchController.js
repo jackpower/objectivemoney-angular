@@ -127,7 +127,6 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             .success(function (result) {
 
                 console.log(result);
-                console.log("data sent");
 
             })
             .error(function (data, status) {
