@@ -1,5 +1,5 @@
 //Module
-var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics']);
+var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics','ng-optimizely']);
 
 //Routing
 omApp.config(['$routeProvider', function ($routeProvider) {
@@ -122,6 +122,12 @@ omApp.config(['$routeProvider', function ($routeProvider) {
 
 }]);
 
+
+    omApp.run(['optimizely', function(optimizely) {
+  optimizely.loadProject('3207421324');
+    }]);
+        
+        
     //Create a capitalisation filter that turns a string lower case and then capitalises the first letter of the string
 omApp.filter('capitalize', function() {
     
