@@ -415,6 +415,9 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     if($scope.plannerprofiles[i].yearsExperienceTrans === 0){
         $scope.plannerprofiles[i].yearsExperienceTrans = $scope.plannerprofiles[i].yearsExperience + ' months'
     }
+    else if($scope.plannerprofiles[i].yearsExperienceTrans === 1){
+        $scope.plannerprofiles[i].yearsExperienceTrans = $scope.plannerprofiles[i].yearsExperienceTrans + ' year'
+    }    
     else{
         $scope.plannerprofiles[i].yearsExperienceTrans = $scope.plannerprofiles[i].yearsExperienceTrans + ' years'
     }
