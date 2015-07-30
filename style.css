@@ -1332,6 +1332,51 @@ footer>div>ul>li {
 .carousel-control.left {
     background-image: linear-gradient(to right,rgba(32,61,108,.5) 0,rgba(0,0,0,.0001) 100%);
 }
+
+.modal-content {
+    border-radius: 0px;
+    background-color:#e8e8e8;
+}
+
+.modalButton {
+    border: none;
+    background-color: #e8e8e8;
+}
+
+.modal-postsearch{
+    background-color:#f8650d;
+    padding: 5px 0px;
+    text-align: center;
+    color: #fff;
+    height:100%;
+    margin: 20px 0;
+}
+
+.modal-postsearchdisabled{
+    background-color: #DBD9D9;
+    padding: 5px 0px;
+    text-align: center;
+    color: #BDBDBD;
+    height:100%;
+    margin: 20px 0;
+}
+
+.modal-header {
+    padding-left:5%;
+    padding-right:5%;
+}
+
+#modal-heading {
+    font-size:22px;
+    color:#203d6c;
+    text-align:center;
+}
+
+.modalInfoIcon{
+    color:#203d6c;
+    font-size:12px;
+}
+
 /*
 .about {
     margin-top: 60px;

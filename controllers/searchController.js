@@ -1,4 +1,4 @@
-omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$window', '$location', 'searchquery', 'enquiry', 'reviews', '$http', 'Data','$timeout', '$anchorScroll', function($scope, $routeParams, $rootScope, $window, $location, searchquery, enquiry, reviews, $http, Data, $timeout, $anchorScroll) {
+omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$window', '$location', 'searchquery', 'enquiry', 'reviews', '$http', 'Data','$timeout', '$anchorScroll', '$modal', '$log', function($scope, $routeParams, $rootScope, $window, $location, searchquery, enquiry, reviews, $http, Data, $timeout, $anchorScroll, $modal, $log) {
 
     //Create empty objects for users searches, enquiries and reviews
     
@@ -14,6 +14,37 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.searchquery = searchquery;
     $scope.enquiry = enquiry;
     $scope.reviews = reviews;
+    
+    
+    $scope.searchquery.updateTimesSeen = function () {
+        $scope.searchquery.timesSeen = 1;
+    };
+    
+    $scope.open = function (size) {
+        $scope.searchquery.updateTimesSeen();
+        var modalInstance = $modal.open({
+          animation: $scope.animationsEnabled,
+          templateUrl: 'pages/modalWalkthrough.html',
+          controller: ['$scope', '$modalInstance', 'searchquery', function ($scope, $modalInstance, searchquery) {
+            $scope.searchquery = searchquery;
+            $scope.ok = function () {
+                $modalInstance.close();
+              };
+          }],
+          size: size,
+          resolve: {
+            items: function () {
+              return $scope.items;
+            }
+          }
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+          $scope.selected = selectedItem;
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };    
     
     //GET AND POST DATA TO DATABASE
     //GET REQUESTS

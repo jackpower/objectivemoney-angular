@@ -9,4 +9,5 @@
     <!-- call the custom directive that displays the shortend profiles of planners -->
         <planner-profile-search planner-data="plannerprofiles" search-data="searchquery" client-value="client1year(monthly,lump)" post-search-unfulfilled="postSearchUnfulfilled()"></planner-profile-search>
     </div> 
+<span ng-if="!searchquery.timesSeen > 0" ng-init="open('lg')"></span>
 </div>
