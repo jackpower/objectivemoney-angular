@@ -51,7 +51,6 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.closeBar = false;
     $scope.setCloseBar = function() {
         $scope.closeBar = true;
-        console.log("hello");
     };
     
     //Create a show bar function that shows when latitude is set and close bar is false, when close bar is true it sets to false
@@ -60,7 +59,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         if(($scope.searchquery.lat > 0 || $scope.searchquery.lat < 0) && !$scope.closeBar) {
             $timeout(function(){
             $scope.showBar = true;
-            },15000);
+            },30000);
         }
         if($scope.closeBar) {
             $scope.showBar = false;
@@ -171,9 +170,24 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             });
     };
     
+    $scope.customerList = {};
+    //Post mailing list sign up
+    $scope.mailingListSubmit = function() {
+        $http.post('php/postCustomerMailing.php',{ 'searchquery' : $scope.searchquery, 'customerList' : $scope.customerList })
+                .success(function (result) {
+
+                    console.log(result);
+                    $location.path("/mailinglistthanks");
+
+                })
+                .error(function (data, status) {
     
+                    console.log(data);
+
+                });
+    };  
     
-    //Post search request to database
+    //Post unfulfilled search request to database
     $scope.postSearchUnfulfilled = function () {
     $http.post('php/postSearchUnfulfilled.php',{ 'searchquery' : $scope.searchquery })
             .success(function (result) {

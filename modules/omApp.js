@@ -116,6 +116,16 @@ omApp.config(['$routeProvider', function ($routeProvider) {
         controller: 'searchController'
     })
     
+    .when('/mailinglist', {
+        templateUrl: 'pages/mailinglistsignup.html',
+        controller: 'searchController'
+    })    
+    
+    .when('/mailinglistthanks', {
+        templateUrl: 'pages/mailinglistthanks.html',
+        controller: 'searchController'
+    })      
+    
     .otherwise({
         redirectTo: '/'
     });
