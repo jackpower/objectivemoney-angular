@@ -88,6 +88,11 @@
                 </div>
             </footer>
         </div>
+        <div ng-controller="searchController">
+            <div ng-show="showBar" class="signupBox">
+                <p id ="signupBox-text"><span ng-click="setCloseBar();setShowBar()" class="signupBox-close pull-right"><b>&times;</b></span>Sign Up To Our Mailing List To Get Great Content On Your Financial Freedom.</p>
+            </div>
+        </div>            
 
         <!-- load angular and additional precompiled services -->
         <script src="//code.angularjs.org/1.4.0-rc.2/angular.min.js"></script>

@@ -516,6 +516,8 @@ footer>div>ul>li {
 #searchprofilefooter-text{
     position: relative;
     top: 50%;
+    -webkit-transform: translateY(25%);
+  -ms-transform: translateY(25%);
     transform: translateY(25%);
 }
 
@@ -1375,6 +1377,36 @@ footer>div>ul>li {
 .modalInfoIcon{
     color:#203d6c;
     font-size:12px;
+}
+
+.signupBox{
+    padding: 10px;
+    background-color:rgba(32,61,108,1);
+    position: fixed;
+    z-index:100;
+    bottom:0;
+    text-align: left;
+    height:60px;
+    width:100%;
+
+}
+
+.signupBox.ng-hide-remove {
+    animation:1.5s slideInUp ease;
+}
+
+#signupBox-text{
+    color: #fff;
+      position: relative;
+      top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+      transform: translateY(-50%);    
+}
+
+.signupBox-close{
+    color: #fff;
+    font-size:16px;
 }
 
 /*

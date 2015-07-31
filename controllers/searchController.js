@@ -15,11 +15,12 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.enquiry = enquiry;
     $scope.reviews = reviews;
     
-    
+    //Create a counter that shows that the modal has already been seen    
     $scope.searchquery.updateTimesSeen = function () {
         $scope.searchquery.timesSeen = 1;
     };
     
+    //Create the modal which sets has been seen to 1 when it is shown
     $scope.open = function (size) {
         $scope.searchquery.updateTimesSeen();
         var modalInstance = $modal.open({
@@ -44,7 +45,27 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         }, function () {
           $log.info('Modal dismissed at: ' + new Date());
         });
-      };    
+      };
+    
+    //Create a close function for the mailing list info bar
+    $scope.closeBar = false;
+    $scope.setCloseBar = function() {
+        $scope.closeBar = true;
+        console.log("hello");
+    };
+    
+    //Create a show bar function that shows when latitude is set and close bar is false, when close bar is true it sets to false
+    $scope.showBar = false;
+    $scope.setShowBar = function() {
+        if(($scope.searchquery.lat > 0 || $scope.searchquery.lat < 0) && !$scope.closeBar) {
+            $timeout(function(){
+            $scope.showBar = true;
+            },15000);
+        }
+        if($scope.closeBar) {
+            $scope.showBar = false;
+        }   
+    };
     
     //GET AND POST DATA TO DATABASE
     //GET REQUESTS
@@ -856,6 +877,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
                 $scope.getQuerylen();
                 $scope.setPageNameChange();
                 $scope.checkFormCompleteness();
+                $scope.setShowBar();
                 /*$scope.getErrorMessage();*/
     });
     
