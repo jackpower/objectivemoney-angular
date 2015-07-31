@@ -3,17 +3,17 @@
 <!-- LOOP, FILTER AND ORDER SHORTEND PLANNER PROFILES -->
 <!-- loop through planners, order by their relevance score -->
 <!-- only show planners where the client amount is greater than the planner minimum and the client is within the planners willingness to travel -->
-    <div class="searchinfo-moreinfo" ng-show="searchData.monthlysalary === 0 && searchData.lumpsum === 0 && searchData.address.name.length > 0">
+    <div class="searchinfo-moreinfo" ng-show="searchData.monthlysalary === 0 && searchData.lumpsum === 0 && (searchData.lat > 0 || searchData.lat < 0)">
         <div class="searchprofile-message">
             <p><i class="fa fa-info-circle"></i><b>&nbsp;&nbsp;&nbsp;Not seeing many planners?</b> Tell us more about you in the search bar <span ng-show="searchData.windowWidth >= 992">(on the left)</span> <span ng-show="searchData.windowWidth < 992">(above)</span> and more planners will be able to help you.</p>
         </div>
     </div>
-    <div class="searchinfo-address" ng-show="!searchData.address.name.length > 0">
+    <div class="searchinfo-address" ng-show="!(searchData.lat > 0 || searchData.lat < 0)">
         <div class="searchprofile-message">
             <p><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;Let us know where you live in the search bar <span ng-show="searchData.windowWidth >= 992">(on the left)</span> <span ng-show="searchData.windowWidth < 992">(above)</span> so that we can find you planners in your area.</p>
         </div>
     </div>
-    <div class="searchinfo-noplanner" ng-show="(searchData.monthlysalary !== 0 || searchData.lumpsum) !== 0 && plannersFilterd.length === 0 && searchData.address.name.length > 0">
+    <div class="searchinfo-noplanner" ng-show="searchData.formFilled && plannersFilterd.length === 0">
         <div class="searchprofile-message">
             <p><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;<b>Sorry.</b> We don't have any planners that meet your requirements right now.</p>
         </div>

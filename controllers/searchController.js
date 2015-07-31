@@ -205,7 +205,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.searchquery.formFilled = false;
     $scope.checkFormCompleteness = function() {
         $timeout( function(){
-        if(($scope.searchquery.monthlysalary !== 0 || $scope.searchquery.lumpsum !== 0) && $scope.searchquery.address.name.length > 0) {
+        if(($scope.searchquery.monthlysalary !== 0 || $scope.searchquery.lumpsum !== 0) && ($scope.searchquery.lat > 0 || $scope.searchquery.lat < 0)) {
             $scope.searchquery.formFilled = true;
         };
         },1000);
