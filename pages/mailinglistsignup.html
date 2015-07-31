@@ -14,7 +14,7 @@
 
     <div class="form-group" ng-class="{ 'has-error': submitted && customerMailingList.firstname.$invalid }">
         <label class="plannerlogin-body-header" for="name">First Name</label>
-        <input type="text" class="form-control plannerlogin-body-input" name="firstname" id="firstname" ng-model="customerList.firstname" required>
+        <input type="text" class="form-control" name="firstname" id="firstname" ng-model="customerList.firstname" required>
       <div class="help-block" ng-messages="customerMailingList.firstname.$error" ng-if="submitted">
         <p ng-message="required">This is required.</p>
       </div>
@@ -22,7 +22,7 @@
         
     <div class="form-group" ng-class="{ 'has-error': submitted && customerMailingList.surname.$invalid }">
         <label class="plannerlogin-body-header" for="name">Surname</label>
-        <input type="text" class="form-control plannerlogin-body-input" name="surname" id="surname" ng-model="customerList.surname" required>
+        <input type="text" class="form-control" name="surname" id="surname" ng-model="customerList.surname" required>
       <div class="help-block" ng-messages="customerMailingList.surname.$error" ng-if="submitted">
         <p ng-message="required">This is required.</p>
       </div>
@@ -30,7 +30,7 @@
 
     <div class="form-group" ng-class="{ 'has-error': submitted && customerMailingList.email.$invalid }">
         <label class="plannerlogin-body-header" for="email">E-Mail Address</label>
-        <input type="email" class="form-control plannerlogin-body-input" name="email" id="email" ng-model="customerList.email" required>
+        <input type="email" class="form-control" name="email" id="email" ng-model="customerList.email" required>
       <div class="help-block" ng-messages="customerMailingList.email.$error" ng-if="submitted">
         <p ng-message="required">This is required.</p>
         <p ng-message="email">Please enter a valid e-mail.</p>
