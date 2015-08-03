@@ -50,6 +50,11 @@ omApp.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'pages/blog/what-is-an-independent-financial-planner.html',
         controller: 'resourcesController'
     })
+    
+    .when('/stock-versus-property-investing', {
+        templateUrl: 'pages/blog/5-Facts-You-Need-To-Know-Before-Deciding-Between-Stock-Market-and-Property-Investment.html',
+        controller: 'resourcesController'
+    })    
 
     .when('/login', {
         templateUrl: 'pages/plannerlogin.html',
