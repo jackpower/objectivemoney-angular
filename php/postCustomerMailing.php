@@ -47,6 +47,15 @@
     // execute the query
     $stmt->execute(array($firstname, $surname, $email, $value, $monthlysalary, $lumpsum, $addresslat, $addresslong, $investments, $LT, $ST, $EP, $TP, $MA, $english, $afrikaans, $zulu, $xhosa, $southernsotho, $tswana, $northernsotho, $tsonga, $venda, $swati, $ndebele, $searchgender, $ipaddress));
 
+    // the message
+    $msg = "A user has signed up to the mailing list\n";
+
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    // send email
+    mail("jack@objectivemoney.co.za","Mailing List Sign Up",$msg);
+
     // disconnect from database
     Database::disconnect();
 
