@@ -1,0 +1,40 @@
+<div class="col-sm-4 blogexcerpt-sidebar" ng-init="loadShareThis()">
+    <div class="blogexcerpt-sidebar-recentpost">
+        <div class="blogexcerpt-sidebar-recentpost-title">
+            <p><b>RECENT POSTS</b></p>
+        </div>
+        <div class="blogexcerpt-sidebar-recentpost-body">
+            <p><a href="#/what-is-an-independent-financial-planner" class="blogexcerpt-link">What Is An Independent Financial Planner Anyway?</a></p>           
+            <p><a href="#/stock-versus-property-investing" class="blogexcerpt-link">5 Facts You Need To Know Before Deciding Between Stock Market and Property Investment</a></p> 
+        </div>
+    </div>
+    <div ng-hide="currentPath !== '/resources'" class="blogexcerpt-sidebar-categories">
+        <div class="blogexcerpt-sidebar-categories-title">
+            <p><b>CATEGORIES</b></p>
+        </div>
+        <div class="blogexcerpt-sidebar-categories-body">
+            <p><a ng-click="setBlogCategory({blogCategory: 'Finding A Planner'})" ng-class="{ 'blogexcerpt-link blogexcerpt-category-selected': blogCategory == 'Finding A Planner', 'blogexcerpt-link': blogCategory != 'Finding A Planner' }">Finding a Planner</a></p>
+            <p><a ng-click="setBlogCategory({blogCategory: 'Savings Advice'})" ng-class="{ 'blogexcerpt-link blogexcerpt-category-selected': blogCategory == 'Savings Advice', 'blogexcerpt-link': blogCategory != 'Savings Advice' }">Savings Advice</a></p>
+            <p><a ng-click="setBlogCategory({blogCategory: 'All'})" ng-class="{ 'blogexcerpt-link blogexcerpt-category-selected': blogCategory == 'All', 'blogexcerpt-link': blogCategory != 'All' }">All</a></p>
+        </div>
+    </div>
+    
+    <div ng-show="currentPath !== '/resources'" class="blogexcerpt-sidebar-categories">
+        <div class="blogexcerpt-sidebar-categories-title">
+            <p class="blogexcerpt-sidebar-categories-back"><b><a href="#/resources" class="blogexcerpt-link">BACK TO MORE ARTICLES</b></a></p>
+        </div>
+    </div> 
+    
+    <div class="blogexcerpt-sidebar-socialshare">
+        <div class="blogexcerpt-sidebar-socialshare-title">
+            <p><b>SHARE</b></p>
+        </div>
+        <div class="blogexcerpt-sidebar-socialshare-body">
+            <span class='st_twitter_large' displayText='Tweet'></span>
+            <span class='st_facebook_large' displayText='Facebook'></span>
+            <span class='st_linkedin_large' displayText='LinkedIn'></span>
+            <span class='st_googleplus_large' displayText='Google +'></span>
+            <span class='st_email_large' displayText='Email'></span>
+        </div>
+    </div>    
+</div>

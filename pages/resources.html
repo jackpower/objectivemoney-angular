@@ -1,5 +1,211 @@
 <div class="container">
+    <div class="col-sm-8 blogexcerpts">
+        <div class="blogexcerpt-filterInfo" ng-show="blogCategory !== 'All'">
+        <p class="blogexcerpt-filterInfo-text">Viewing Articles On: <b>{{blogCategory}}</b></p>
+        </div>
+        
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Savings Advice'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/Property_vs_Stock_Infographic_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;4th August, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/stock-versus-property-investing" class="blogexcerpt-link">5 Facts You Need To Know Before Deciding Between Stock Market and Property Investment</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Savings Advice')" class="blogexcerpt-link">Savings Advice</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                        <p>Deciding whether to put your nest egg in properties or stocks? There are strong advocates on either side of the fence who will give you conflicting advice.</p>
+                        <p>Make sure that before you make any decision you are armed with these five facts.</p><!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/stock-versus-property-investing')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>  
 
-<blog-excerpt blog-post="blogPosts"></blog-excerpt>
-    
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Finding A Planner'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/Independent_Financial_Planner_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;22nd July, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/what-is-an-independent-financial-planner" class="blogexcerpt-link">What Is An Independent Financial Planner Anyway?</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Finding A Planner')" class="blogexcerpt-link">Finding A Planner</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                         <p>You will often hear people refer to independent and tied financial planners and it is an important distinction to understand.</p>
+                         <p>This article explains the differences between the two and why it matters to you.</p>
+<!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/what-is-an-independent-financial-planner')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>         
+
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Finding A Planner'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/Planner_Fee_Flow_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;20th July, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/what-fees-does-a-financial-planner-charge" class="blogexcerpt-link">What Fees Does a Financial Planner Charge?</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Finding A Planner')" class="blogexcerpt-link">Finding A Planner</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                         <p>Nobody works for free and neither will a financial planner. Before you sign on the dotted line it is critical that you understand how a planner makes money.</p>
+                         <p>Read more to find out exactly what kind of fees you are likely to pay and get access to some rough industry benchmarks on the amount that you should expect paying.</p>
+<!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/what-fees-does-a-financial-planner-charge')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>    
+        
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Savings Advice'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/Stock_Market_Primer_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;6th July, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/introduction-to-financial-markets" class="blogexcerpt-link">An Introduction to Financial Markets</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Savings Advice')" class="blogexcerpt-link">Savings Advice</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                         <p>What is the purpose of the Stock Market? How does it work and what should I know when considering investing?</p> 
+                        <p>This article will help you to understand the basics of the stock market and is a must read before you start investing.</p>
+<!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/introduction-to-financial-markets')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>  
+        
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Finding A Planner'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/Planner_As_A_Friend_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;24th June, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/choose-your-planner-like-you-would-a-friend-not-a-toothbrush" class="blogexcerpt-link">Choose Your Financial Planner Like You Would A Friend, Not A Toothbrush</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Finding A Planner')" class="blogexcerpt-link">Finding A Planner</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                        <p>When choosing a financial planner you need to consider how well you get on with them at a personal level. In order for the relationship to be a success you need to trust them.</p>
+                        <p>Click to find out how you can decide if a planner is the right fit for you.</p>
+<!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/choose-your-planner-like-you-would-a-friend-not-a-toothbrush')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>        
+
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Finding A Planner'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/Planner_Not_A_Scammer_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;18th June, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/how-to-ensure-your-planners-not-a-scammer" class="blogexcerpt-link">How To Ensure Your Planner’s Not A Scammer</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Finding A Planner')" class="blogexcerpt-link">Finding A Planner</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                        <p>The sad truth is that there are some planners out there who might not have your best interests at heart and could rip you off. Clearly, this must be avoided at all costs.</p>
+                        <p>Fortunately, it is relatively simple to find out if they are a credible planner. Read more to learn tried and tested methods for avoiding scamming planners.</p>
+<!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/how-to-ensure-your-planners-not-a-scammer')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>   
+        
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Finding A Planner'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/Value_Of_A_Planner_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;8th June, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/what-is-the-value-of-a-financial-planner" class="blogexcerpt-link">What Is the Value of a Financial Planner?</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Finding A Planner')" class="blogexcerpt-link">Finding A Planner</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                        <p>Why should I get a financial planner anyway and what do they actually do for me?</p>
+                        <p>The simple answer is that they should be doing a lot for you. This article explains how the average financial planner will generate an additional 1.8% of wealth for you per annum.</p>
+<!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/what-is-the-value-of-a-financial-planner')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>        
+              
+    </div>  
+    <blog-sidebar blog-category="blogCategory" set-blog-category="setBlogCategory(blogCategory)" current-path="currentPath" load-share-this="loadShareThis()"></blog-sidebar>
 </div>

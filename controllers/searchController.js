@@ -7,7 +7,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.reviews = {};
 
     $scope.fname = {};
-    $scope.fname.name = "bob"
+    $scope.fname.name = "bob";
     
     //Inject the searchquery, enquiry and reviews service to ensure data persistency moving across pages in Search Controller
     
@@ -356,7 +356,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $scope.plannerprofiles.pageChanged = function(){
        
        $anchorScroll('navbar-example');
-    }
+    };
     //DEAL WITH GOOGLE AUTOCOMPLETE ADDRESSES [CURRENTLY NOT WORKING BECAUSE COMPONENT TAKEN OUT OF AUTOCOMPLETE DIRECTIVE IN ORDER THAT IT DOES NOT RESET ONCE USER GOES OFF SEARCH PAGE]
     //Restricts addresses to South Africa only
     

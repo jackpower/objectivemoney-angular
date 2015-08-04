@@ -1,14 +1,32 @@
-omApp.controller('resourcesController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-
+omApp.controller('resourcesController', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location) {
+    
+    $scope.readMore = function(path) {
+        $location.path(path);
+    };
+    
+    $scope.blogCategory = "All";
+    $scope.setBlogCategory = function(blogCategory) {
+        $location.path('/resources');
+        $scope.blogCategory = blogCategory;
+    };
+    
+    $scope.currentPath = $location.path();
+    
+    $scope.loadShareThis = function() {
+        stButtons.makeButtons();
+    };    
 }]);
 
-omApp.directive("blogExcerpt", function() {
+omApp.directive("blogSidebar", function() {
     return {
         restrict: 'EC',
-        templateUrl: 'directives/blogexcerpt.html',
+        templateUrl: 'directives/blogSidebar.html',
         replace: true,
         scope: {
-        blogPost: "="
+        blogCategory: "=",    
+        setBlogCategory: "&",
+        currentPath: "=",
+        loadShareThis: "&"
         }
     }
 });
