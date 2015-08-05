@@ -1582,6 +1582,7 @@ footer>div>ul>li {
 .signupBox-close{
     color: #fff;
     font-size:16px;
+    cursor: pointer;
 }
 
 .plannerlogin-header-list{
