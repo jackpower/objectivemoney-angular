@@ -494,6 +494,18 @@ footer>div>ul>li {
     font-size:12px;
 }
 
+.blogexcerpt-sidebar{
+    position: fixed;
+    right:20px;
+}
+
+@media (max-width: 768px) {
+.blogexcerpt-sidebar{
+    position: relative;
+    right:0px;
+}
+}
+
 .blogexcerpt-sidebar-recentpost{
     border-color:#e8e8e8;
     border-width:1px;
