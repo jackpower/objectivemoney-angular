@@ -56,8 +56,8 @@ omApp.config(['$routeProvider', function ($routeProvider) {
         controller: 'resourcesController'
     })    
 
-    .when('/what-you-need-to-know-about-robo-advise', {
-        templateUrl: 'pages/blog/what-you-need-to-know-about-robo-advise.html',
+    .when('/what-you-need-to-know-about-robo-advice', {
+        templateUrl: 'pages/blog/what-you-need-to-know-about-robo-advice.html',
         controller: 'resourcesController'
     }) 
     
