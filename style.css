@@ -581,6 +581,11 @@ footer>div>ul>li {
 
 .blogexcerpt-excerpt-body-inlineImage {
     width:100%;
+    margin-bottom:20px;
+}
+
+#blogexcerpt-excerpt-body-video {
+    padding-top:5px;
 }
 
 #flag {

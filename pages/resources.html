@@ -7,6 +7,34 @@
         <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Investing Information'"><!--Update based on post-->
             <div class="blogexcerpt">
                 <div class="blogexcerpt-photocontainer">
+                    <img ng-src="img/blogphotos/intro/robo_advisor_intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
+                </div>
+                <div class="blogexcerpt-info">
+                    <p class="blogexcerpt-infotext">                    
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;6th August, 2015
+                    </p><!--Update based on post-->
+                </div> 
+                <div class="blogexcerpt-excerpt">
+                    <div class="blogexcerpt-excerpt-title">
+                        <p><b><a href="#/what-you-need-to-know-about-robo-advise" class="blogexcerpt-link">What You Need To Know About Robo-Advise</a></b></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-category">
+                        <p>Posted In: <a ng-click="setBlogCategory('Investing Information')" class="blogexcerpt-link">Investing Information</a></p><!--Update based on post-->
+                    </div>
+                    <div class="blogexcerpt-excerpt-body">
+                        <p>Robo-advise is the talk of the town and will be coming to South Africa soon.</p>
+                        <p>Don't just get caught up in the hype, read this article to understand more about what robo-advise is and is not.</p><!--Update based on post--> 
+                    </div> 
+                    <div class="blogexcerpt-readmore">
+                        <button class="blogexcerpt-readmore-button" ng-click="readMore('/what-you-need-to-know-about-robo-advise')">READ MORE&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button><!--Update based on post-->
+                    </div>           
+                </div> 
+            </div>
+        </article>         
+        
+        <article ng-hide="blogCategory !== 'All' && blogCategory !== 'Investing Information'"><!--Update based on post-->
+            <div class="blogexcerpt">
+                <div class="blogexcerpt-photocontainer">
                     <img ng-src="img/blogphotos/intro/Property_vs_Stock_Infographic_Intro.png" class="blogexcerpt-photo"/><!--Update based on post-->
                 </div>
                 <div class="blogexcerpt-info">

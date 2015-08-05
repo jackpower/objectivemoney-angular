@@ -56,6 +56,11 @@ omApp.config(['$routeProvider', function ($routeProvider) {
         controller: 'resourcesController'
     })    
 
+    .when('/what-you-need-to-know-about-robo-advise', {
+        templateUrl: 'pages/blog/what-you-need-to-know-about-robo-advise.html',
+        controller: 'resourcesController'
+    }) 
+    
     .when('/login', {
         templateUrl: 'pages/plannerlogin.html',
         controller: 'plannerRegController'
