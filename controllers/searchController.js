@@ -893,6 +893,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
                 $scope.checkFormCompleteness();
                 $scope.setShowBar();
                 /*$scope.getErrorMessage();*/
+                $scope.checkAddressCompleted();
     });
     
     //Create a variable that stores the value of the route parameters that allows people to see the full profile of only one planner, it is used to filter the page data to the planner.
@@ -1043,6 +1044,17 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
       image: 'stanlib_logo'
     }
   ];
+    
+    $scope.linkButton = function(path) {
+        $location.path(path);
+    };
+    
+    $scope.searchquery.addressCompleted = false;
+    $scope.checkAddressCompleted = function() {
+        if($scope.searchquery.lat > 0 || $scope.searchquery.lat < 0) {
+            $scope.searchquery.addressCompleted = true;
+        };
+    };    
     
 }]);
 
