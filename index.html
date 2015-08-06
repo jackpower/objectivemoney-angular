@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="omApp">
     <head>
-        <title>Objective Money</title>
+        <title>{{ metatags.title }}</title>
+        <meta name="description" content="{{ metatags.description }}" >
+        <meta name="robots" content="{{ metatags.robots }}" >
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Find your perfect financial planner | Quickly search for and compare verified, customer reviewed financial planners in your area with Objective Money">
-        <meta name="keywords" content="search,financial,planner,compare,verified,planners">
 
         <!-- load bootstrap and fontawesome via CDN -->
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -110,6 +109,7 @@
         <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
         <script src="angular-slider-master/slider.js"></script>
         <script src="bower_components/ng-optimizely/ng-optimizely.js"></script>
+        <script src="angular-metatags.min.js"></script>
             
         <!-- load angular app -->
         <script src="modules/omApp.js"></script>
@@ -119,7 +119,7 @@
         <script src="services/data.min.js"></script>
         
         <!-- load angular controllers -->
-        <script src="controllers/minified/searchController.js"></script>
+        <script src="controllers/searchController.js"></script>
         <script src="controllers/minified/resourcesController.js"></script>
         <script src="controllers/minified/plannerRegController.js"></script>
         

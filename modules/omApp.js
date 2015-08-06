@@ -1,8 +1,8 @@
 //Module
-var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics','ng-optimizely']);
+var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics','ng-optimizely','metatags']);
 
 //Routing
-omApp.config(['$routeProvider', function ($routeProvider) {
+omApp.config(['$routeProvider','MetaTagsProvider', function ($routeProvider, MetaTagsProvider) {
     
     $routeProvider
     
@@ -119,16 +119,6 @@ omApp.config(['$routeProvider', function ($routeProvider) {
     .when('/plannerreviews:id', {
         templateUrl: 'pages/plannerreviews.html',
         controller: 'searchController'
-    }) 
-    
-    .when('/userlogin', {
-        templateUrl: 'pages/userlogin.html',
-        controller: 'searchController'
-    }) 
-    
-    .when('/userregister', {
-        templateUrl: 'pages/userregister.html',
-        controller: 'searchController'
     })
     
     .when('/mailinglist', {
@@ -144,6 +134,164 @@ omApp.config(['$routeProvider', function ($routeProvider) {
     .otherwise({
         redirectTo: '/'
     });
+    
+    MetaTagsProvider
+    
+    .when('/', {
+        title: 'Find Financial Planners – Compare Reviews | Objective Money',
+        description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
+        robots: 'index, follow'
+    })    
+    
+    .when('/home2', {
+        title: 'Find Financial Planners – Compare Reviews | Objective Money',
+        description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
+        robots: 'noindex, nofollow'
+    })        
+    
+    .when('/search', {
+        title: 'Search Reviewed Financial Planners | Objective Money',
+        description:'Search For Verified, Customer Reviewed Planners In Your Area',
+        robots: 'index, follow'
+    })
+
+    .when('/resources', {
+        title: 'How To Choose A Planner And General Investing Information',
+        description:'Access Great Information On How To Choose A Planner And General Investing Information',
+        robots: 'index, follow'
+    })
+
+    .when('/how-to-ensure-your-planners-not-a-scammer', {
+        title: 'Ensure Your Planner Is Not A Scammer | Objective Money',
+        description:'Learn Tried And Tested Techniques To Determine If Your Planner Is Credible',
+        robots: 'index, follow'
+    })
+    
+    .when('/what-is-the-value-of-a-financial-planner', {
+        title: 'Is A Financial Planner Worth The Fees | Objective Money',
+        description:'Why Should I Get A Financial Planner And What Do They Actually Do For Me? Find Out What The Value Of A Financial Planner Is',
+        robots: 'index, follow'
+    })
+    
+    .when('/choose-your-planner-like-you-would-a-friend-not-a-toothbrush', {
+        title: 'Make Sure You Like Your Financial Planner | Objective Money',
+        description:'Find Out How You Can Decide If A Planner Is The Right Fit For You',
+        robots: 'index, follow'
+    })
+    
+    .when('/introduction-to-financial-markets', {
+        title: 'An Introduction To Financial Markets | Objective Money',
+        description:'Looking To Get Into Investing? Read This Introduction To Financial Markets',
+        robots: 'index, follow'
+    })
+    
+    .when('/what-fees-does-a-financial-planner-charge', {
+        title: 'How Much Does A Planner Charge | Objective Money',
+        description:'How Much Does A Financial Planner Charge? This Article Explains A Financial Planners Fee Structure',
+        robots: 'index, follow'
+    })
+    
+    .when('/what-is-an-independent-financial-planner', {
+        title: 'What Is An Independent Financial Planner | Objective Money',
+        description:'This Article Explains The Differences Between Independent And Tied Planners And Why It Matters To You',
+        robots: 'index, follow'
+    })
+    
+    .when('/stock-versus-property-investing', {
+        title: 'Stock Market Or Property Investing | Objective Money',
+        description:'Deciding Between Stock Market And Property Investing? This Article Explains The Key Differences Between Them',
+        robots: 'index, follow'
+    })    
+
+    .when('/what-you-need-to-know-about-robo-advice', {
+        title: 'Introduction To Robo-Advice | Objective Money',
+        description:'Robo-advice will be coming to South Africa soon. Dont get caught up in the hype, this article explains what robo-advice is and is not',
+        robots: 'index, follow'
+    }) 
+    
+    .when('/login', {
+        title: 'Financial Planner Registration | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })    
+    
+    .when('/signupthanks', {
+        title: 'Thanks For Signing Up | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })
+    
+    .when('/plannerprofilefull:id', {
+        title: 'Detailed Financial Planner Profile | Objective Money',
+        description:'Get All Of The Details Of Your Chosen Financial Planner | Request A Meeting Or Leave A Review',
+        robots: 'index, follow'
+    })
+    
+    .when('/plannerenquiry:id', {
+        title: 'Request A Meeting With A Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })
+    
+    .when('/enquire:id', {
+        title: 'Request A Meeting With A Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })   
+    
+    .when('/enquirythanks:id', {
+        title: 'Request A Meeting With A Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })  
+    
+    .when('/plannerrating:id', {
+        title: 'Review A Financial Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })
+    
+    .when('/fullplannerreviews:id', {
+        title: 'Review A Financial Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })
+    
+    .when('/reviewthanks:id', {
+        title: 'Review A Financial Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })  
+    
+    .when('/review:id', {
+        title: 'Review A Financial Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })
+    
+    .when('/plannerreviews:id', {
+        title: 'Review A Financial Planner | Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })
+    
+    .when('/mailinglist', {
+        title: 'Get Information On Financial Planning | Objective Money',
+        description:'Get The Latest News On Financial Planners In Your Area',
+        robots: 'index, follow'
+    })    
+    
+    .when('/mailinglistthanks', {
+        title: 'Get Information On Financial Planning | Objective Money',
+        description:'',
+        robots: 'index, follow'
+    })      
+    
+    .otherwise({
+        title: 'Find Financial Planners – Compare Reviews | Objective Money',
+        description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
+        robots: 'index, follow'
+    });    
 
 }]);
 
@@ -210,3 +358,7 @@ omApp.run(function ($routeParams, $rootScope, $location, Data) {
                 });
         });
     });
+
+omApp.run(function(MetaTags){
+    MetaTags.initialize();
+});
