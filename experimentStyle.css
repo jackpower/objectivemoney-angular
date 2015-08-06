@@ -1,12 +1,3 @@
-.jumbotron2 {
-    margin-top:-20px;
-    background-image:url("img/sitephotos/Beach.png");
-    background-repeat:no-repeat;
-    background-size: cover;
-    height:500px;
-    margin-bottom:0px;
-}
-
 .jumbotron3 {
     margin-top:-20px;
     background-repeat:no-repeat;
@@ -18,7 +9,7 @@
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2)
     ),
-    url("img/sitephotos/Beach.png");
+    url("img/sitephotos/sunset.png");
 }
 
 .homepage-jumbo-info2 {
