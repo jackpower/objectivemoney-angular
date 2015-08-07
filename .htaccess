@@ -27,6 +27,7 @@ RewriteCond %{HTTP_HOST} !^www\.
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI}$1 [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}$1
+RewriteRule ^([a-z0-9]+)$ /#/$1 [R=302,L,NE,NC]
 
 Redirect 301 /find-a-planner https://www.objectivemoney.co.za/#/search
 Redirect 301 /about-us/our-mission-2 https://www.objectivemoney.co.za/#/
