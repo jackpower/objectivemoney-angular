@@ -66,6 +66,11 @@ omApp.config(['$routeProvider','MetaTagsProvider', function ($routeProvider, Met
         controller: 'resourcesController'
     }) 
     
+    .when('/6-things-that-online-data-tells-you-about-financial-planning', {
+        templateUrl: 'pages/blog/6-things-that-online-data-tells-you-about-financial-planning.html',
+        controller: 'resourcesController'
+    })     
+    
     .when('/login', {
         templateUrl: 'pages/plannerlogin.html',
         controller: 'plannerRegController'
@@ -138,13 +143,13 @@ omApp.config(['$routeProvider','MetaTagsProvider', function ($routeProvider, Met
     MetaTagsProvider
     
     .when('/', {
-        title: 'Find Financial Planners – Compare Reviews | Objective Money',
+        title: 'Compare Reviewed Financial Planners | Objective Money',
         description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
         robots: 'index, follow'
     })    
     
     .when('/home2', {
-        title: 'Find Financial Planners – Compare Reviews | Objective Money',
+        title: 'Compare Reviewed Financial Planners | Objective Money',
         description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
         robots: 'noindex, nofollow'
     })        
@@ -204,7 +209,7 @@ omApp.config(['$routeProvider','MetaTagsProvider', function ($routeProvider, Met
     })    
 
     .when('/what-you-need-to-know-about-robo-advice', {
-        title: 'Introduction To Robo-Advice | Objective Money',
+        title: 'Introduction To Robo Advice | Objective Money',
         description:'Robo-advice will be coming to South Africa soon. Dont get caught up in the hype, this article explains what robo-advice is and is not',
         robots: 'index, follow'
     }) 
@@ -288,7 +293,7 @@ omApp.config(['$routeProvider','MetaTagsProvider', function ($routeProvider, Met
     })      
     
     .otherwise({
-        title: 'Find Financial Planners – Compare Reviews | Objective Money',
+        title: 'Compare Reviewed Financial Planners | Objective Money',
         description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
         robots: 'index, follow'
     });    
