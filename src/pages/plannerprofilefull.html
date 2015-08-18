@@ -19,7 +19,7 @@
             <div class="row col-sm-12 fullprofilebody">
                 <p id="fullprofilebody-infoheader"><b>HIGHEST QUALIFICATION</b>
                     <button ng-show="searchquery.windowWidth >= 500" popover="The Financial Planning Institute (FPI) award planners with internationally recognised qualifications. The hardest FPI qualification to attain is the CFP, followed by AFP, RFP and FSA. We have also listed any other relevant planner qualifications." popover-html="true" popover-trigger="focus" popover-placement="right" class="modalButton fullprofilebody-info-popover" tabindex="0"><i class="fa fa-question-circle"></i></button>
-                    <button ng-show="searchquery.windowWidth < 500" popover="The Financial Planning Institute (FPI) award planners with internationally recognised qualifications. The hardest FPI qualification to attain is the CFP, followed by AFP, RFP and FSA. We have also listed any other relevant planner qualifications." popover-html="true" popover-trigger="focus" popover-placement="bottom" class="modalButton fullprofilebody-info-popover" tabindex="0"><i class="fa fa-question-circle"></i></button>                
+                    <button ng-show="searchquery.windowWidth < 500" popover="The Financial Planning Institute (FPI) award planners with internationally recognised qualifications. The hardest FPI qualification to attain is the CFP, followed by AFP, RFP and FSA. We have also listed any other relevant planner qualifications." popover-html="true" popover-trigger="click" popover-placement="bottom" class="modalButton fullprofilebody-info-popover" tabindex="0"><i class="fa fa-question-circle"></i></button>                
                 </p>
                 <p id="fullprofilebody-info">
                         <span ng-show="planner.CFP === '1'">CFP</span>
@@ -36,15 +36,17 @@
                 <p id="fullprofilebody-info">{{planner.date_of_birth2 | ageFilter}} old</p>    
                 <p id="fullprofilebody-infoheader"><b>INDEPENDENCE</b>
                     <button ng-show="searchquery.windowWidth >= 500" popover="Independent planners can recommend products from any provider, whereas non-independent / tied planners can only suggest products from one company. It is typically advisable to use an independent planner." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button>
-                    <button ng-show="searchquery.windowWidth < 500" popover="Independent planners can recommend products from any provider, whereas non-independent / tied planners can only suggest products from one company. It is typically advisable to use an independent planner." popover-trigger="focus" popover-placement="top" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button>
+                    <button ng-show="searchquery.windowWidth < 500" popover="Independent planners can recommend products from any provider, whereas non-independent / tied planners can only suggest products from one company. It is typically advisable to use an independent planner." popover-trigger="click" popover-placement="top" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button>
                     </p>
                 <p id="fullprofilebody-info">{{planner.independent}}</p>
                 </span>
                 <p id="fullprofilebody-infoheader"><b>SERVICES</b>
-                    <button popover="Unless you have a specific service in mind you should want your planner to offer as many services as possible. It is particularly important that they offer investment and long term insurance. Click on the services below to find out more about them." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button>
+                    <button ng-show="searchquery.windowWidth >= 500" popover="Unless you have a specific service in mind you should want your planner to offer as many services as possible. It is particularly important that they offer investment and long term insurance. Click on the services below to find out more about them." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button>
+                    <button ng-show="searchquery.windowWidth < 500" popover="Unless you have a specific service in mind you should want your planner to offer as many services as possible. It is particularly important that they offer investment and long term insurance. Click on the services below to find out more about them." popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button>
                 </p>
                 <p ng-class="{ 'fullprofilebody-info-servicesOn': planner.investments === 'inHouse' || planner.investments === 'outsource', 'fullprofilebody-info-servicesOff': planner.investments === 'notOffered' }" id="fullprofilebody-info">
-                    <button class="fullprofilebody-info-services-info" popover="Investments refer to stock market investment products, such as mutual funds and retirement annuities." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Investments:</button>
+                    <button ng-show="searchquery.windowWidth >= 500" class="fullprofilebody-info-services-info" popover="Investments refer to stock market investment products, such as mutual funds and retirement annuities." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Investments:</button>
+                    <button ng-show="searchquery.windowWidth < 500" class="fullprofilebody-info-services-info" popover="Investments refer to stock market investment products, such as mutual funds and retirement annuities." popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0">Investments:</button>
                     <span class="pull-right">
                         <i ng-show="planner.investments === 'inHouse'" class="fa fa-check"></i>
                         <i ng-show="planner.investments === 'outsource'" class="fa fa-check"></i>
@@ -52,7 +54,8 @@
                     </span>
                 </p>
                 <p ng-class="{ 'fullprofilebody-info-servicesOn': planner.LT === 'inHouse' || planner.LT === 'outsource', 'fullprofilebody-info-servicesOff': planner.LT === 'notOffered' }" id="fullprofilebody-info">
-                    <button class="fullprofilebody-info-services-info fullprofilebody-info-popover" popover="Long Term Insurance generally refers to insurance products that cover yourself; it includes life, disability, dread disease and funeral insurance." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Long Term Insurance:</button>
+                    <button ng-show="searchquery.windowWidth >= 500" class="fullprofilebody-info-services-info fullprofilebody-info-popover" popover="Long Term Insurance generally refers to insurance products that cover yourself; it includes life, disability, dread disease and funeral insurance." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Long Term Insurance:</button>
+                    <button ng-show="searchquery.windowWidth < 500" class="fullprofilebody-info-services-info fullprofilebody-info-popover" popover="Long Term Insurance generally refers to insurance products that cover yourself; it includes life, disability, dread disease and funeral insurance." popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0">Long Term Insurance:</button>
                     <span class="pull-right">
                         <i ng-show="planner.LT === 'inHouse'" class="fa fa-check"></i>
                         <i ng-show="planner.LT === 'outsource'" class="fa fa-check"></i>
@@ -60,7 +63,8 @@
                     </span>
                 </p>
                 <p ng-class="{ 'fullprofilebody-info-servicesOn': planner.ST === 'inHouse' || planner.ST === 'outsource', 'fullprofilebody-info-servicesOff': planner.ST === 'notOffered' }" id="fullprofilebody-info">
-                    <button class="fullprofilebody-info-services-info" popover="Short Term Insurance generally refers to insurance products that cover your possessions. For example, car and household insurance are included here." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Short Term Insurance:</button>
+                    <button ng-show="searchquery.windowWidth >= 500" class="fullprofilebody-info-services-info" popover="Short Term Insurance generally refers to insurance products that cover your possessions. For example, car and household insurance are included here." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Short Term Insurance:</button>
+                    <button ng-show="searchquery.windowWidth < 500" class="fullprofilebody-info-services-info" popover="Short Term Insurance generally refers to insurance products that cover your possessions. For example, car and household insurance are included here." popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0">Short Term Insurance:</button>
                     <span class="pull-right">
                         <i ng-show="planner.ST === 'inHouse'" class="fa fa-check"></i>
                         <i ng-show="planner.ST === 'outsource'" class="fa fa-check"></i>
@@ -68,7 +72,8 @@
                     </span>
                 </p>
                 <p ng-class="{ 'fullprofilebody-info-servicesOn': planner.TP === 'inHouse' || planner.TP === 'outsource', 'fullprofilebody-info-servicesOff': planner.TP === 'notOffered' }" id="fullprofilebody-info">
-                    <button class="fullprofilebody-info-services-info" popover="Tax Planning helps to optimize the amount that you or your business pays in tax." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Tax Planning:</button>
+                    <button ng-show="searchquery.windowWidth >= 500" class="fullprofilebody-info-services-info" popover="Tax Planning helps to optimize the amount that you or your business pays in tax." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Tax Planning:</button>
+                    <button ng-show="searchquery.windowWidth < 500" class="fullprofilebody-info-services-info" popover="Tax Planning helps to optimize the amount that you or your business pays in tax." popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0">Tax Planning:</button>
                     <span class="pull-right">
                         <i ng-show="planner.TP === 'inHouse'" class="fa fa-check"></i>
                         <i ng-show="planner.TP === 'outsource'" class="fa fa-check"></i>
@@ -76,7 +81,8 @@
                     </span>
                 </p>
                 <p ng-class="{ 'fullprofilebody-info-servicesOn': planner.EP === 'inHouse' || planner.EP === 'outsource', 'fullprofilebody-info-servicesOff': planner.EP === 'notOffered' }" id="fullprofilebody-info">
-                    <button class="fullprofilebody-info-services-info" popover="Estate Planning refers to how your assets are to be distributed in the event of your death. It includes the writing of wills and the establishment of trust accounts." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Estate Planning:</button>
+                    <button ng-show="searchquery.windowWidth >= 500" class="fullprofilebody-info-services-info" popover="Estate Planning refers to how your assets are to be distributed in the event of your death. It includes the writing of wills and the establishment of trust accounts." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Estate Planning:</button>
+                    <button ng-show="searchquery.windowWidth < 500" class="fullprofilebody-info-services-info" popover="Estate Planning refers to how your assets are to be distributed in the event of your death. It includes the writing of wills and the establishment of trust accounts." popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0">Estate Planning:</button>
                     <span class="pull-right">
                         <i ng-show="planner.EP === 'inHouse'" class="fa fa-check"></i>
                         <i ng-show="planner.EP === 'outsource'" class="fa fa-check"></i>
@@ -84,7 +90,8 @@
                     </span>
                 </p>
                 <p ng-class="{ 'fullprofilebody-info-servicesOn': planner.MA === 'inHouse' || planner.MA === 'outsource', 'fullprofilebody-info-servicesOff': planner.MA === 'notOffered' }" id="fullprofilebody-info">
-                    <button class="fullprofilebody-info-services-info" popover="Medical Aid helps you to pay medical bills if you were to fall ill and needed to see a GP or visit the hospital." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Medical Aid:</button>
+                    <button ng-show="searchquery.windowWidth >= 500" class="fullprofilebody-info-services-info" popover="Medical Aid helps you to pay medical bills if you were to fall ill and needed to see a GP or visit the hospital." popover-trigger="focus" popover-placement="right" class="modalButton" tabindex="0">Medical Aid:</button>
+                    <button ng-show="searchquery.windowWidth < 500" class="fullprofilebody-info-services-info" popover="Medical Aid helps you to pay medical bills if you were to fall ill and needed to see a GP or visit the hospital." popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0">Medical Aid:</button>
                     <span class="pull-right">
                         <i ng-show="planner.MA === 'inHouse'" class="fa fa-check"></i>
                         <i ng-show="planner.MA === 'outsource'" class="fa fa-check"></i>
