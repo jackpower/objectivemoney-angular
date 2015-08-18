@@ -14,11 +14,6 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     .when('/', {
         templateUrl: 'pages/home.html',
         controller: 'searchController'
-    })    
-    
-    .when('/home2', {
-        templateUrl: 'pages/home2.html',
-        controller: 'searchController'
     })        
     
     .when('/search', {
@@ -151,13 +146,7 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         title: 'Compare Reviewed Financial Planners | Objective Money',
         description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
         robots: 'index, follow'
-    })    
-    
-    .when('/home2', {
-        title: 'Compare Reviewed Financial Planners | Objective Money',
-        description:'Objective Money Helps You To Find Your Perfect Financial Planner | Compare Verified, Customer Reviewed Planners In Your Area and Get Access To Great Information On How To Choose A Planner',
-        robots: 'noindex, nofollow'
-    })        
+    })         
     
     .when('/search', {
         title: 'Search Reviewed Financial Planners | Objective Money',
