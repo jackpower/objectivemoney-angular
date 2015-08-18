@@ -106,11 +106,6 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         controller: 'searchController'
     })
     
-    .when('/fullplannerreviews:id', {
-        templateUrl: 'pages/fullplannerreviews.html',
-        controller: 'searchController'
-    })
-    
     .when('/reviewthanks:id', {
         templateUrl: 'pages/reviewthanks.html',
         controller: 'searchController'
@@ -250,12 +245,6 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     })  
     
     .when('/plannerrating:id', {
-        title: 'Review A Financial Planner | Objective Money',
-        description:'',
-        robots: 'noindex, nofollow'
-    })
-    
-    .when('/fullplannerreviews:id', {
         title: 'Review A Financial Planner | Objective Money',
         description:'',
         robots: 'noindex, nofollow'
