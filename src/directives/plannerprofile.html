@@ -1,0 +1,122 @@
+<div class="container">
+
+        <!-- FILTER PLANNERS WHERE THE PLANNER ID MATCHES THE ROUTE PARAMETER, WHICH IS DEFINED BY THE PLANNER ID  -->
+    
+    <div class="panel panel-default">
+    
+        <!-- DISPLAY THE FULL PLANNER PROFILE -->
+    
+    <div class="panel-heading">
+        <h3 class="panel-title"> {{  plannerData.firstname }} {{  plannerData.surname }}, {{ plannerData.company }}</h3>
+        <h3 class="panel-title">{{ plannerData.address.components.city }}, {{ plannerData.address.components.state }}</h3>
+    </div>                    
+    <div class="panel-body">
+        <div class="row col-md-12">
+            <p><img class="plannerphoto" ng-src="img/plannerprofiles/{{ photoPath.files[0].uniqueIdentifier }}" class="plannerphotoupload"></img><span class ="valueprop">{{ plannerData.valueProp }}</span></p>
+        </div>
+        <div class="row">
+        <div class="col-md-4">
+            <div class="plannerprofileheader">
+                <h3>About {{plannerData.firstname}}</h3><hr>
+            </div>
+            <div>
+                <a class="btn btn-default btn-md plannerprofilebutton" href="#/plannerenquiry{{ plannerData.id }}" >Meet With {{plannerData.firstname}}</a>
+            </div>
+            <div>
+                <p><b>Highest Qualification:</b>
+                {{plannerData.selectedQual.name}}</p>
+            </div>
+            <div>
+                <p><b>Experience:</b> {{ plannerData.datebeginplanning | ageFilter }}</p>
+            </div>
+            <div>
+                <p><b>Age:</b> {{plannerData.dateofbirth | ageFilter}}</p>
+            </div>
+            <div>
+                <p><b>Services:</b></p>
+                <p>Investments: 
+                    <span ng-show="plannerData.selectedInvest.id === 'inHouse'"><i class="fa fa-check tick"></i> In-House</span>
+                    <span ng-show="plannerData.selectedInvest.id === 'outsource'"><i class="fa fa-sign-out outsource"></i> Outsourced</span>
+                    <span ng-show="plannerData.selectedInvest.id === 'notOffered'"><i class="fa fa-times cross"></i> Not Offered</span>
+                </p>
+                <p>Long Term Insurance:
+                    <span ng-show="plannerData.selectedLT.id === 'inHouse'"><i class="fa fa-check tick"></i> In-House</span>
+                    <span ng-show="plannerData.selectedLT.id === 'outsource'"><i class="fa fa-sign-out outsource"></i> Outsourced</span>
+                    <span ng-show="plannerData.selectedLT.id === 'notOffered'"><i class="fa fa-times cross"></i> Not Offered</span>
+                </p>
+                <p>Short Term Insurance:
+                    <span ng-show="plannerData.selectedST.id === 'inHouse'"><i class="fa fa-check tick"></i> In-House</span>
+                    <span ng-show="plannerData.selectedST.id === 'outsource'"><i class="fa fa-sign-out outsource"></i> Outsourced</span>
+                    <span ng-show="plannerData.selectedST.id === 'notOffered'"><i class="fa fa-times cross"></i> Not Offered</span>
+                </p>
+                <p>Tax Planning:
+                    <span ng-show="plannerData.selectedTP.id === 'inHouse'"><i class="fa fa-check tick"></i> In-House</span>
+                    <span ng-show="plannerData.selectedTP.id === 'outsource'"><i class="fa fa-sign-out outsource"></i> Outsourced</span>
+                    <span ng-show="plannerData.selectedTP.id === 'notOffered'"><i class="fa fa-times cross"></i> Not Offered</span>
+                </p>
+                <p>Estate Planning:
+                    <span ng-show="plannerData.selectedEP.id === 'inHouse'"><i class="fa fa-check tick"></i> In-House</span>
+                    <span ng-show="plannerData.selectedEP.id === 'outsource'"><i class="fa fa-sign-out outsource"></i> Outsourced</span>
+                    <span ng-show="plannerData.selectedEP.id === 'notOffered'"><i class="fa fa-times cross"></i> Not Offered</span>
+                </p>
+                <p>Medical Aid:
+                    <span ng-show="plannerData.selectedMA.id === 'inHouse'"><i class="fa fa-check tick"></i> In-House</span>
+                    <span ng-show="plannerData.selectedMA.id === 'outsource'"><i class="fa fa-sign-out outsource"></i> Outsourced</span>
+                    <span ng-show="plannerData.selectedMA.id === 'notOffered'"><i class="fa fa-times cross"></i> Not Offered</span>
+                </p>
+            </div>
+            <div>
+                <p><b>Languages:</b></p>
+                <p ng-show="plannerData.languages.english">English</p>
+                <p ng-show="plannerData.languages.afrikaans">Afrikaans</p>
+                <p ng-show="plannerData.languages.zulu">Zulu</p>
+                <p ng-show="plannerData.languages.xhosa">Xhosa</p>
+                <p ng-show="plannerData.languages.southernsotho">Southern Sotho</p>
+                <p ng-show="plannerData.languages.tswana">Tswana</p>
+                <p ng-show="plannerData.languages.northernsotho">Northern Sotho</p>
+                <p ng-show="plannerData.languages.tsonga">Tsonga</p>
+                <p ng-show="plannerData.languages.venda">Venda</p>
+                <p ng-show="plannerData.languages.swati">Swati</p>
+                <p ng-show="plannerData.languages.ndebele">Ndebele</p>
+            </div>
+            <div ng-show="plannerData.clientminimum > 0">
+                <p><b>Only serves clients with over:</b> {{ plannerData.clientminimum | currency : "R" : 0 }}</p>
+            </div>
+            <div ng-show="plannerData.clientminimum === 0">
+                <p><b>Does not have a client minimum</b></p>
+            </div>
+            <div>
+                <p><b>Distance From You:</b> {{ plannerData.distancetoclient }}km</p>
+            </div>
+            <div ng-show="plannerData.favmovie.length > 0">
+                <p><b>Favourite Movie:</b> {{ plannerData.favmovie }}</p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="plannerprofileheader">
+                <h3>Reviews of {{plannerData.firstname}}</h3><hr>
+            </div>
+            <div>
+                <a class="btn btn-default btn-md plannerprofilebutton" href="#/plannerrating{{ plannerData.id }}" >Leave a Review of {{plannerData.firstname}}</a>
+            </div>
+            <div class="plannerreviewbox">
+                <div ng-repeat="review in plannerData.reviews | orderBy: 'date':true" class="panel panel-success">
+                    <div class="panel-heading">
+                        <div class="panel-title plannerreview">
+                            <h5>{{ review.reviewername }}, {{ review.reviweroccupation }}</h5>
+                            <h5>Customer Age: {{ review.reviwerage }}</h5>
+                            <h5>Date of Review: {{ review.date | date:'d-M-yyyy' }}</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Score: {{ review.score }} / 5</b></p>
+                        <p>{{ review.review }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+</div>

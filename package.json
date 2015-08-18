@@ -1,0 +1,22 @@
+{
+  "name": "grunt-getting-started",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-htmlmin": "^0.4.0",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-fingerprint": "^0.2.0",
+    "grunt-newer": "^1.1.1",
+    "grunt-processhtml": "^0.3.8",
+    "grunt-replace": "^0.9.3",
+    "grunt-rev-package": "latest",
+    "jshint-stylish": "latest"
+  }
+}

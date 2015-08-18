@@ -1,0 +1,68 @@
+<div class="container">
+
+        <!-- FILTER PLANNERS WHERE THE PLANNER ID MATCHES THE ROUTE PARAMETER, WHICH IS DEFINED BY THE PLANNER ID  -->
+    
+    <div ng-repeat="planner in plannerprofiles | filter: {pid: pid}:true" class="panel panel-default">
+    
+    <!-- DISPLAY THE FULL PLANNER PROFILE -->
+    
+    <div class="panel-heading">
+        <h3 class="panel-title"> {{  planner.plannerfirstname }} {{  planner.plannersurname }}, {{ planner.company }}</h3>
+        <h3 class="panel-title">{{ planner.addressCity  | lowercase | capitalize }}, {{ planner.addressState }}</h3>
+    </div>                    
+    <div class="panel-body">
+        <div class="row">
+        <div class="col-md-12">
+            <div class="plannerprofileheader">
+                <h3>Reviews of {{planner.plannerfirstname}}</h3><hr>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-success btn-md plannerprofilebutton" href="#/review{{ planner.pid }}" >Leave a Review for {{planner.plannerfirstname}}</a>
+            </div>
+            <div  class="col-md-6">
+                <a class="btn btn-success btn-md plannerprofilebutton col-md-6" href="#/plannerprofilefull{{ planner.pid }}" >Back to {{planner.plannerfirstname}}'s profile</a>
+            </div>
+            <!-- DISPLAY ALL PLANNER REVIEWS AND ORDER BY DATE / TIME POSTED -->
+            <div class="plannerreviewboxfull col-md-12">
+                <div ng-repeat="review in plannerReviews | filter: {pid: pid} | orderBy: 'created':true" class="panel panel-success">
+                    <div class="panel-heading">
+                        <!-- SHOW REVIEWER DETAILS -->
+                        <div class="panel-title plannerreview">
+                            <h5>{{ review.name }}, {{ review.userjob }}</h5>
+                            <!-- HIDE AGE IF NOT PROVIDED -->
+                            <h5 ng-hide="review.userage.length === 0">Customer Age: {{ review.userage }}</h5>
+                            <h5>Date of Review: {{ review.created | date:'d-M-yyyy' }}</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Score: {{ review.score }} / 5</b></p><hr ng-hide="review.overall.length === 0">
+                        <!-- HIDE OVERALL TEXT DESCRIPTION IF NOT PRESENT -->
+                        <div ng-hide="review.overall.length === 0">
+                        <p><b>Overall how would you describe your experience with {{  planner.plannerfirstname }}?</b></p>
+                        <p>{{ review.overall }}</p><hr>
+                        </div>
+                        <!-- HIDE SERVICES RENDERED TEXT DESCRIPTION IF NOT PRESENT -->
+                        <div ng-hide="review.services.length === 0">
+                        <p><b>What did {{  planner.plannerfirstname }} help you with?</b></p>
+                        <p>{{ review.services }}</p><hr>
+                        </div>
+                        <!-- HIDE WHAT DID THEY DO WELL TEXT DESCRIPTION IF NOT PRESENT -->
+                        <div ng-hide="review.good.length === 0">
+                        <p><b>What did {{  planner.plannerfirstname }} do really well?</b></p>
+                        <p>{{ review.good }}</p><hr>
+                        </div>
+                        <!-- HIDE WHAT COULD THEY DO BETTER TEXT DESCRIPTION IF NOT PRESENT -->
+                        <div ng-hide="review.better.length === 0">
+                        <p><b>What could {{  planner.plannerfirstname }} have done better?</b></p>
+                        <p>{{ review.better }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+    </div>
+</div>

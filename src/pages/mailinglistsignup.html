@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="plannerlogin-header">
+    <h2 class="plannerlogin-header-text">Sign Up To Our Mailing List Today For:</h2> 
+    <h3 class="plannerlogin-header-text">
+    <ul>
+        <li class="plannerlogin-header-list">Articles on how to choose the right planner</li>
+        <li class="plannerlogin-header-list">Updates on recent planner changes in your area</li>
+    </ul>
+        
+    </h3>
+    </div>
+    <div class="plannerlogin-body">
+    <form name="customerMailingList" ng-submit="customerMailingList.$valid && mailingListSubmit()" novalidate>
+
+    <div class="form-group" ng-class="{ 'has-error': submitted && customerMailingList.firstname.$invalid }">
+        <label class="plannerlogin-body-header" for="name">First Name</label>
+        <input type="text" class="form-control" name="firstname" id="firstname" ng-model="customerList.firstname" required>
+      <div class="help-block" ng-messages="customerMailingList.firstname.$error" ng-if="submitted">
+        <p ng-message="required">This is required.</p>
+      </div>
+    </div>         
+        
+    <div class="form-group" ng-class="{ 'has-error': submitted && customerMailingList.surname.$invalid }">
+        <label class="plannerlogin-body-header" for="name">Surname</label>
+        <input type="text" class="form-control" name="surname" id="surname" ng-model="customerList.surname" required>
+      <div class="help-block" ng-messages="customerMailingList.surname.$error" ng-if="submitted">
+        <p ng-message="required">This is required.</p>
+      </div>
+    </div>    
+
+    <div class="form-group" ng-class="{ 'has-error': submitted && customerMailingList.email.$invalid }">
+        <label class="plannerlogin-body-header" for="email">E-Mail Address</label>
+        <input type="email" class="form-control" name="email" id="email" ng-model="customerList.email" required>
+      <div class="help-block" ng-messages="customerMailingList.email.$error" ng-if="submitted">
+        <p ng-message="required">This is required.</p>
+        <p ng-message="email">Please enter a valid e-mail.</p>
+      </div>
+    </div>
+
+    <!--<input id="searchprofilefooter-text" type="submit" ng-click="submitted=true" class="btn btn-success" value="Submit" />-->
+    <div class="reviewbody-button">
+        <p id="searchprofilefooter-text"><button class="reviewbody-rating-button" ng-click="submitted=true">JOIN NOW&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i></button></p>
+    </div>
+
+    </form>
+    </div>
+</div>

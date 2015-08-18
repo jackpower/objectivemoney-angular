@@ -1,0 +1,344 @@
+<div class="searchprofilecontainer">
+
+<!-- LOOP, FILTER AND ORDER SHORTEND PLANNER PROFILES -->
+<!-- loop through planners, order by their relevance score -->
+<!-- only show planners where the client amount is greater than the planner minimum and the client is within the planners willingness to travel -->
+    <div class="searchinfo-moreinfo" ng-show="searchData.monthlysalary === 0 && searchData.lumpsum === 0 && (searchData.lat > 0 || searchData.lat < 0)">
+        <div class="searchprofile-message">
+            <p><i class="fa fa-info-circle"></i><b>&nbsp;&nbsp;&nbsp;Not seeing many planners?</b> Tell us more about you in the search bar <span ng-show="searchData.windowWidth >= 992">(on the left)</span> <span ng-show="searchData.windowWidth < 992">(above)</span> and more planners will be able to help you.</p>
+        </div>
+    </div>
+    <div class="searchinfo-address" ng-show="!(searchData.lat > 0 || searchData.lat < 0)">
+        <div class="searchprofile-message">
+            <p><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;Let us know where you live in the search bar <span ng-show="searchData.windowWidth >= 992">(on the left)</span> <span ng-show="searchData.windowWidth < 992">(above)</span> so that we can find you planners in your area.</p>
+        </div>
+    </div>
+    <div class="searchinfo-noplanner" ng-show="searchData.formFilled && plannersFilterd.length === 0">
+        <div class="searchprofile-message">
+            <p><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;<b>Sorry.</b> We don't have any planners that meet your requirements right now.</p>
+        </div>
+    </div>
+    <span ng-if="searchData.formFilled && plannersFilterd.length === 0" ng-init="postSearchUnfulfilled()"></span>
+<div class="row searchprofiles">
+    
+    <div ng-show="searchData.querybol" ng-repeat="planner in (plannersFilterd = (plannerData | filter: {'plannerfullname': searchData.query} | orderBy:'relevance':true)).slice(((plannerData.currentPage-1)*plannerData.itemsPerPage), ((plannerData.currentPage)*plannerData.itemsPerPage))">
+<!-- DISPLAY SHORTEND PLANNER PROFILES -->
+        <div ng-class="{ 'col-sm-6 searchprofilelarge': searchData.windowWidth >= 400, 'col-sm-6 searchprofilesmall': searchData.windowWidth < 400 }">
+            <div class="searchprofileheader">
+                <div ng-show="planner.verified === '1'">
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                </div>
+                <div ng-show="planner.verified === '0'">
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png"/>
+                </div>
+                <!--<div class="pull-right searchprofileheader-verifiedIconDiv">
+                    <div class="searchprofileheader-verifiedIconDiv-container">
+                <i class="fa fa-trophy searchprofileheader-verifiedIcon"></i><p id="searchprofileheader-verifiedIcon-text">VERIFIED</p>
+                    </div>
+                </div>-->
+                <p id="searchprofileheader-name">{{ planner.plannerfirstname }} {{ planner.plannersurname }}</p>
+                <p id="searchprofileheader-company">{{ planner.company }}</p>
+                <p id="searchprofileheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
+            </div>
+            <div class="searchprofilebody">
+                <div class="row">
+                    <div ng-show="planner.verified === '1'" class="searchprofileheader-verifiedHeader">
+                        <p id="searchprofileheader-verifiedInfo"><i class="fa fa-check-circle-o verifiedprofileicon"></i>&nbsp;<b>VERIFIED PROFILE</b></p>
+                    </div>
+                    <div ng-show="planner.verified === '0'" class="searchprofileheader-unverifiedHeader">
+                        <p id="searchprofileheader-unverifiedInfo"><b>UNVERIFIED PROFILE</b></p>
+                    </div>
+                </div>
+                <div id="" class="row">
+                    <p id="searchprofilebody-infoheader">RATING</p>
+                </div>
+                <div id="searchprofilebody-info" class="row">
+                    <div class="row">
+                        <span ng-show="planner.average_rating === '0' || planner.average_rating === ''">
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                        </span>
+                        <span ng-show="planner.average_rating > 0 && planner.average_rating < 0.25">
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 0.25 && planner.average_rating < 0.75">
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 0.75 && planner.average_rating < 1.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 1.25 && planner.average_rating < 1.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 1.75 && planner.average_rating < 2.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 2.25 && planner.average_rating < 2.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 2.75 && planner.average_rating < 3.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 3.25 && planner.average_rating < 3.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 3.75 && planner.average_rating < 4.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 4.25 && planner.average_rating < 4.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 4.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p id="searchprofilebody-infoheader">REVIEWS</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p id="searchprofilebody-infoheader">DISTANCE</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p ng-show="planner.num_ratings > 0" id="searchprofilebody-info"><b>{{planner.num_ratings}}</b></p>
+                            <p ng-show="planner.num_ratings === '0' || planner.num_ratings === ''" id="searchprofilebody-info"><b>0</b></p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p id="searchprofilebody-info"><b><span ng-show="planner.distancetoclient >= 0">{{planner.distancetoclient}}km</span><span ng-hide="planner.distancetoclient >= 0">N/A</span></b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchprofilefooter-one">
+                <p id="searchprofilefooter-text"><a href="#/plannerprofilefull{{ planner.pid }}" class="searchprofilefooter-link">GET MORE INFORMATION&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right searchprofilesarrow"></i></a></p>
+            </div>
+            <div class="searchprofilefooter-two">
+                <p id="searchprofilefooter-text"><a href="#/review{{ planner.pid }}" class="searchprofilefooter-link">LEAVE A REVIEW&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right searchprofilesarrow"></i></a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div ng-show="!searchData.querybol" ng-repeat="planner in (plannersFilterd = (plannerData | filter: {plannerfilter:true} | orderBy:'relevance':true)).slice(((plannerData.currentPage-1)*plannerData.itemsPerPage), ((plannerData.currentPage)*plannerData.itemsPerPage))">
+<!-- DISPLAY SHORTEND PLANNER PROFILES -->
+    <a id="top"></a>
+        <div ng-class="{ 'col-sm-6 searchprofilelarge': searchData.windowWidth >= 400, 'col-sm-6 searchprofilesmall': searchData.windowWidth < 400 }">
+            <div class="searchprofileheader">
+                <div ng-show="planner.verified === '1'">
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                </div>
+                <div ng-show="planner.verified === '0'">
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png"/>
+                </div>
+                <!--<div class="pull-right searchprofileheader-verifiedIconDiv">
+                    <div class="searchprofileheader-verifiedIconDiv-container">
+                <i class="fa fa-trophy searchprofileheader-verifiedIcon"></i><p id="searchprofileheader-verifiedIcon-text">VERIFIED</p>
+                    </div>
+                </div>-->
+                <p id="searchprofileheader-name">{{ planner.plannerfirstname }} {{ planner.plannersurname }}</p>
+                <p id="searchprofileheader-company">{{ planner.company }}</p>
+                <p id="searchprofileheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
+            </div>
+            <div class="searchprofilebody">
+                <div class="row">
+                    <div ng-show="planner.verified === '1'" class="searchprofileheader-verifiedHeader">
+                        <p id="searchprofileheader-verifiedInfo"><i class="fa fa-check-circle-o verifiedprofileicon"></i>&nbsp;<b>VERIFIED PROFILE</b></p>
+                    </div>
+                    <div ng-show="planner.verified === '0'" class="searchprofileheader-unverifiedHeader">
+                        <p id="searchprofileheader-unverifiedInfo"><b>UNVERIFIED PROFILE</b></p>
+                    </div>
+                </div>
+                <div id="" class="row">
+                    <p id="searchprofilebody-infoheader">RATING</p>
+                </div>
+                <div id="searchprofilebody-info" class="row">
+                    <div class="row">
+                        <span ng-show="planner.average_rating === '0' || planner.average_rating === ''">
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                        </span>
+                        <span ng-show="planner.average_rating > 0 && planner.average_rating < 0.25">
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 0.25 && planner.average_rating < 0.75">
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 0.75 && planner.average_rating < 1.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 1.25 && planner.average_rating < 1.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 1.75 && planner.average_rating < 2.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 2.25 && planner.average_rating < 2.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 2.75 && planner.average_rating < 3.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 3.25 && planner.average_rating < 3.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 3.75 && planner.average_rating < 4.25">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarsoff"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 4.25 && planner.average_rating < 4.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star-half-o searchprofilestarson"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                        <span ng-show="planner.average_rating >= 4.75">
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <i class="fa fa-star searchprofilestarson"></i>
+                            <span id="searchprofilebody-info">{{planner.average_rating.substring(0,3)}}</span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p id="searchprofilebody-infoheader">REVIEWS</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p id="searchprofilebody-infoheader">DISTANCE</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p ng-show="planner.num_ratings > 0" id="searchprofilebody-info"><b>{{planner.num_ratings}}</b></p>
+                            <p ng-show="planner.num_ratings === '0' || planner.num_ratings === ''" id="searchprofilebody-info"><b>0</b></p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p id="searchprofilebody-info"><b><span ng-show="planner.distancetoclient >= 0">{{planner.distancetoclient}}km</span><span ng-hide="planner.distancetoclient >= 0">N/A</span></b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchprofilefooter-one">
+                <p id="searchprofilefooter-text"><a href="#/plannerprofilefull{{ planner.pid }}" class="searchprofilefooter-link">GET MORE INFORMATION&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right searchprofilesarrow"></i></a></p>
+            </div>
+            <div class="searchprofilefooter-two">
+                <p id="searchprofilefooter-text"><a href="#/review{{ planner.pid }}" class="searchprofilefooter-link">LEAVE A REVIEW&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right searchprofilesarrow"></i></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div class="row col-sm-12">
+
+        <pagination ng-show="plannersFilterd.length > 4" total-items="plannersFilterd.length" ng-model="plannerData.currentPage" ng-change="plannerData.pageChanged()" class="plannerData.pagination-sm" items-per-page="plannerData.itemsPerPage"></pagination>
+    </div>
+</div>

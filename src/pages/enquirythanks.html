@@ -1,0 +1,45 @@
+<div class="container userReview">
+    <!-- FILTER PLANNERS WHERE THE PLANNER ID MATCHES THE ROUTE PARAMETER, WHICH IS DEFINED BY THE PLANNER ID-->  
+    <div ng-repeat="planner in plannerprofiles | filter: {pid: pid}:true" ng-init="loadShareThis()">
+        <div class="review row">
+            <div class="col-sm-12">
+                <div class="row reviewheader">
+                        <img class="reviewheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                        <p id="reviewheader-name">{{ planner.plannerfirstname }} {{ planner.plannersurname }}</p>
+                        <p id="reviewheader-company">{{ planner.company }}</p>
+                        <p id="reviewheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
+                </div>
+            </div>
+        </div>    
+        <div class="thanks-body">
+            <div class="row">
+                <div class="col-sm-2 thanksicon">
+                    <i class="fa fa-thumbs-up"></i>
+                </div>
+                <div class="col-sm-10">
+                    <h3 class="thankstext">Thanks for making an enquiry. We have passed your details onto {{planner.plannerfirstname }} and <span ng-hide="planner.plannergender !== 'male'">he</span><span ng-hide="planner.gender !== 'female'">she</span> will be in touch shortly.</h3>
+                </div>
+            </div><hr class="thanks-seperator">
+            <div class="row">
+                <div class="col-sm-2 thanksicon">
+                    <i class="fa fa-share-square"></i>
+                </div>
+                <div class="col-sm-10">
+                    <h3 class="thankstext">Do you know someone who might find Objective Money useful? Let them know through your preferred method.</h3>
+                    <div class="thanksshareicons">
+                        <span class='st_twitter_large' displayText='Tweet'></span>
+                        <span class='st_facebook_large' displayText='Facebook'></span>
+                        <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                        <span class='st_googleplus_large' displayText='Google +'></span>
+                        <span class='st_email_large' displayText='Email'></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="reviewbody-postreview">
+                    <p id="searchprofilefooter-text"><a href="#/search" class="searchprofilefooter-link">SEARCH FOR MORE PLANNERS&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
