@@ -5,7 +5,7 @@ var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsG
 omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', function ($routeProvider, MetaTagsProvider, googleExperimentsProvider) {
     
     googleExperimentsProvider.configure({
-        experimentId: '4cwWYITBRwik3uTLxqCN-Q'
+        experimentId: 'PdoI0OY_R-qbuWM3p-aLvQ'
     });
     
     
@@ -106,11 +106,6 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         controller: 'searchController'
     })
     
-    .when('/fullplannerreviews:id', {
-        templateUrl: 'pages/fullplannerreviews.html',
-        controller: 'searchController'
-    })
-    
     .when('/reviewthanks:id', {
         templateUrl: 'pages/reviewthanks.html',
         controller: 'searchController'
@@ -134,7 +129,12 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     .when('/mailinglistthanks', {
         templateUrl: 'pages/mailinglistthanks.html',
         controller: 'searchController'
-    })      
+    })    
+    
+    .when('/tester', {
+        templateUrl: 'pages/tester.html',
+        controller: 'searchController'
+    }) 
     
     .otherwise({
         redirectTo: '/'
@@ -245,12 +245,6 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     })  
     
     .when('/plannerrating:id', {
-        title: 'Review A Financial Planner | Objective Money',
-        description:'',
-        robots: 'noindex, nofollow'
-    })
-    
-    .when('/fullplannerreviews:id', {
         title: 'Review A Financial Planner | Objective Money',
         description:'',
         robots: 'noindex, nofollow'

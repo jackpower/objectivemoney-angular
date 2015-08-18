@@ -1570,8 +1570,20 @@ footer>div>ul>li {
     background: none;
 }
 
+.fullprofilebody-info-popover {
+    padding-right:0px;
+}
+
 .popover {
     font-size:12px;
+    max-width:250px;
+}
+
+@media (max-width: 440px) {
+.popover {
+    font-size:11px;
+    max-width:160px;
+}
 }
 
 .signupBox{
