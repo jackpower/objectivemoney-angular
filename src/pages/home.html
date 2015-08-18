@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div variation="0" class="jumbotron">
     <div class="container">
         <div class="homepage-jumbo-info col-sm-offset-7 col-sm-5">
             <div class="homepage-jumbo-info-header">
@@ -24,6 +24,37 @@
             </div>
             <div class="form-group homepage-searchbutton homepage-jumbo-info-boxbutton">
                 <p id="homepage-searchbutton-text"><a href="#/search" class="searchprofilefooter-link">SEARCH NOW&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div variation="1" class="jumbotron4">
+    <div class="container">
+        <div class="homepage-jumbo-info2 col-sm-12">
+            <div class="homepage-jumbo-info-header2">
+                <h1>We'll help you find a <b>financial planner</b>, hassle-free</h1>
+            </div>
+            <div class="homepage-jumbo-info-box2">
+                <h2 class="homepage-jumbo-info-boxheader2"><b>Compare customer reviewed planners</b> in your area</h2>
+                <input vs-google-autocomplete="options"         
+                ng-model="searchquery.address.name" 
+                vs-street-number="searchquery.address.streetNumber" 
+                vs-street="searchquery.address.street"
+                vs-city="searchquery.address.city"
+                vs-state="searchquery.address.state"
+                vs-country-short="searchquery.address.countryCode"
+                vs-country="searchquery.address.country"
+                vs-latitude="searchquery.lat"
+                vs-longitude="searchquery.long" 
+                type="text" 
+                name="address"
+                id="address"
+                ng-class="{ 'form-control homepage-jumbo-info-boxinput2-inactive': !searchquery.addressCompleted, 'form-control homepage-jumbo-info-boxinput2': searchquery.addressCompleted }"
+                placeholder="In which city / suburb do you live?">
+            </div>
+            <div>
+                <button ng-click="linkButton('/search')" ng-class="{ 'homepage-jumbo-info-boxbutton2': !searchquery.addressCompleted, 'homepage-jumbo-info-boxbutton2-active': searchquery.addressCompleted }">SEARCH NOW&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i></button>
             </div>
         </div>
     </div>

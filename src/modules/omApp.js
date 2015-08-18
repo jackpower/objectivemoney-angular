@@ -1,8 +1,13 @@
 //Module
-var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics','metatags', 'googleExperiments']);
+var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics','metatags', 'googleExperiments', 'angularLoad']);
 
 //Routing
-omApp.config(['$routeProvider','MetaTagsProvider', function ($routeProvider, MetaTagsProvider) {
+omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', function ($routeProvider, MetaTagsProvider, googleExperimentsProvider) {
+    
+    googleExperimentsProvider.configure({
+        experimentId: '4cwWYITBRwik3uTLxqCN-Q'
+    });
+    
     
     $routeProvider
     
