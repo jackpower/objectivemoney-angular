@@ -841,6 +841,7 @@ footer>div>ul>li {
     text-align:left;
     padding-bottom: 10px;
     padding-top:25px;
+    padding-right:0px;
 }
 
 #fullprofilebody-infoheader {
@@ -1525,6 +1526,10 @@ footer>div>ul>li {
     background-color: #e8e8e8;
 }
 
+.popover {
+    width:100%;
+}
+
 .modal-postsearch{
     background-color:#f8650d;
     padding: 5px 0px;
@@ -1556,6 +1561,16 @@ footer>div>ul>li {
 
 .modalInfoIcon{
     color:#203d6c;
+    font-size:12px;
+}
+
+.fullprofilebody-info-services-info{
+    padding: 0px;
+    border:none;
+    background: none;
+}
+
+.popover {
     font-size:12px;
 }
 
