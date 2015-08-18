@@ -134,7 +134,12 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     .when('/mailinglistthanks', {
         templateUrl: 'pages/mailinglistthanks.html',
         controller: 'searchController'
-    })      
+    })    
+    
+    .when('/tester', {
+        templateUrl: 'pages/tester.html',
+        controller: 'searchController'
+    }) 
     
     .otherwise({
         redirectTo: '/'

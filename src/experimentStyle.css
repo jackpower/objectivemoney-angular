@@ -1,24 +1,19 @@
-.jumbotron3 {
-    margin-top:-20px;
+.jumbotron2 {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("img/sitephotos/find-a-financial-planner.png");
     background-repeat:no-repeat;
     background-size: cover;
     height:500px;
-    margin-bottom:0px;
-  background-image: 
-    url("img/smartphone.png");
-}
-
-.jumbotron4 {
-  background: url("img/smartphone.png") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    margin-top:-20px;
+    margin-bottom:-2px;
 }
 
 .homepage-jumbo-info2 {
-      position: relative;
-      margin-top:50px;
+    margin-top:50px;
 }
 
 .homepage-jumbo-info-box2 {
@@ -35,6 +30,27 @@
     color: #fff;
 }
 
+
+@media (max-width: 400px) {
+  .jumbotron2 {
+    padding-left:0px;
+    padding-right:0px;
+    background-image:none;
+    background-color:#FCFDFC;
+    height:470px;
+
+  }
+    .homepage-jumbo-info2{
+    padding-left:0;
+    padding-right:0;
+    margin-top:10px;
+    }
+  .homepage-jumbo-info-header2 > h1{
+    font-size:32px;
+    color: #f8650d;
+}
+}
+
 .homepage-jumbo-info-boxinput2{
     margin-bottom:40px;
     box-shadow:none;
@@ -44,9 +60,9 @@
 
 .homepage-jumbo-info-boxinput2-inactive {
     animation:1s pulse ease;
-    -webkit-animation-delay: 3s; /* Chrome, Safari, Opera */
-    -ms-animation-delay: 3s;
-    animation-delay: 3s;
+    -webkit-animation-delay: 5s; /* Chrome, Safari, Opera */
+    -ms-animation-delay: 5s;
+    animation-delay: 5s;
     margin-bottom:40px;
     box-shadow:none;
     border: 1px solid #f8650d;
@@ -74,9 +90,9 @@
   }
 .homepage-jumbo-info-boxinput2-inactive {
     animation:1s pulse ease;
-    -webkit-animation-delay: 3s; /* Chrome, Safari, Opera */
-    -ms-animation-delay: 3s;
-    animation-delay: 3s;
+    -webkit-animation-delay: 5s; /* Chrome, Safari, Opera */
+    -ms-animation-delay: 5s;
+    animation-delay: 5s;
     margin-bottom:40px;
     box-shadow:none;
     border: 1px solid #f8650d;
@@ -96,7 +112,7 @@
 }
 
 .homepage-jumbo-info-boxbutton2{
-    padding: 15px;
+    padding: 10px;
     font-size: 20px;
     width: 90%;
     border: none;
@@ -107,7 +123,7 @@
 }
 
 .homepage-jumbo-info-boxbutton2-active{
-    padding: 15px;
+    padding: 10px;
     font-size: 20px;
     width: 90%;
     border: none;
