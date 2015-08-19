@@ -78,7 +78,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             if($location.path().indexOf("plannerprofilefull") && !$scope.popoutClosed) {
                 $timeout(function(){
                 $scope.popoutOpen = true;
-                },2000);
+                },20000);
             };
             if($scope.popoutClosed) {
                 $scope.popoutOpen = false;
