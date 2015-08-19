@@ -1,6 +1,13 @@
 <div class="container">
         <!-- FILTER PLANNERS WHERE THE PLANNER ID MATCHES THE ROUTE PARAMETER, WHICH IS DEFINED BY THE PLANNER ID  -->
     <div ng-repeat="planner in plannerprofiles | filter:  {pid: pid}:true">
+        <div ng-show="popoutOpen" class="fullprofilepopout">
+            <div class="fullprofilepopout-text">
+                <p ng-click="closePopout(); setPopoutOpen()" class="signupBox-close pull-right"><b>&times;</b></p>
+                <p>Request a <b>free, no-strings attached</b> exploratory meeting with {{ planner.plannerfirstname }}.</p>
+                <button ng-click="requestMeeting()" class="fullprofilepopout-button">REQUEST A MEETING&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar-o"></i></button>
+            </div>
+        </div>
         <div class="col-sm-4 fullprofile">
             <div class="row fullprofileheader col-sm-12">
                 <div ng-show="planner.verified === '1'">

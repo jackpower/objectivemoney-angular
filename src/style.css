@@ -1574,6 +1574,43 @@ footer>div>ul>li {
     padding-right:0px;
 }
 
+.fullprofilepopout {
+    position: fixed;
+    right:0;
+    background-color:rgba(232,232,232,0.9);
+    padding:10px;
+    z-index:100;
+    max-width:200px;
+}
+
+.fullprofilepopout.ng-hide-remove {
+    animation:1.5s slideInRight ease;
+}
+
+.fullprofilepopout.ng-hide-add {
+    animation:1.5s slideOutRight ease;
+}
+
+.fullprofilepopout-text {
+    position: relative;
+      top: 50%;
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+      transform: translateY(0%);
+    text-align: center;
+}
+
+.fullprofilepopout-button{
+    padding: 5px;
+    font-size: 12px;
+    width: 90%;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f8650d;
+    color:#fff;
+}
+
 .popover {
     font-size:12px;
     max-width:250px;

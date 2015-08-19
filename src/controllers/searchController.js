@@ -66,6 +66,27 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         }   
     };
     
+    //Create a show bar function that shows when latitude is set and close bar is false, when close bar is true it sets to false
+    
+    $scope.popoutClosed = false;
+    $scope.closePopout = function() {
+        $scope.popoutClosed = true;
+    };
+    
+    $scope.popoutOpen = false;
+    $scope.setPopoutOpen = function() {
+            if($location.path().indexOf("plannerprofilefull") && !$scope.popoutClosed) {
+                $timeout(function(){
+                $scope.popoutOpen = true;
+                },2000);
+            };
+            if($scope.popoutClosed) {
+                $scope.popoutOpen = false;
+            }; 
+    };
+    
+    $scope.setPopoutOpen();
+    
     //GET AND POST DATA TO DATABASE
     //GET REQUESTS
     //Get planner reviews from database
@@ -1042,6 +1063,10 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     
     $scope.linkButton = function(path) {
         $location.path(path);
+    };
+    
+    $scope.requestMeeting = function() {
+        $location.path('/enquire' + $scope.plannerprofiles.pid);
     };
     
     $scope.searchquery.addressCompleted = false;
