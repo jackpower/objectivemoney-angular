@@ -12,6 +12,7 @@
     $value = $request->searchquery->clientvalue;
     $monthlysalary = $request->searchquery->monthlysalary;
     $lumpsum = $request->searchquery->lumpsum;
+    $address = $request->searchquery->address->name;
     $addresslat = $request->searchquery->lat;
     $addresslong = $request->searchquery->long;
     $investments = $request->searchquery->investments;
@@ -36,13 +37,13 @@
 
 
     // a query get all the records from the users table
-    $sql = "INSERT INTO user_search_unfulfilled (value, monthlysalary, lumpsum, addresslat, addresslong, investments, LT, ST, EP, TP, MA, english, afrikaans, zulu, xhosa, southernsotho, tswana, northernsotho, tsonga, venda, swati, ndebele, searchgender, ip) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO user_search_unfulfilled (value, monthlysalary, lumpsum, address, addresslat, addresslong, investments, LT, ST, EP, TP, MA, english, afrikaans, zulu, xhosa, southernsotho, tswana, northernsotho, tsonga, venda, swati, ndebele, searchgender, ip) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // use prepared statements, even if not strictly required is good practice
     $stmt = $pdo->prepare( $sql );
 
     // execute the query
-    $stmt->execute(array($value, $monthlysalary, $lumpsum, $addresslat, $addresslong, $investments, $LT, $ST, $EP, $TP, $MA, $english, $afrikaans, $zulu, $xhosa, $southernsotho, $tswana, $northernsotho, $tsonga, $venda, $swati, $ndebele, $searchgender, $ipaddress));
+    $stmt->execute(array($value, $monthlysalary, $lumpsum, $address, $addresslat, $addresslong, $investments, $LT, $ST, $EP, $TP, $MA, $english, $afrikaans, $zulu, $xhosa, $southernsotho, $tswana, $northernsotho, $tsonga, $venda, $swati, $ndebele, $searchgender, $ipaddress));
 
     // disconnect from database
     Database::disconnect();
