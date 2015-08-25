@@ -98,6 +98,15 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
 
     });
     
+    //Get planner comments from database
+    
+    $scope.plannerComments = {};
+    $http.get('php/getPlannerComments.php')
+    .success(function(data) {
+        $scope.plannerComments = data;
+
+    });    
+    
     //POST REQUESTS
     //Post login request
     $scope.login = {};
@@ -354,7 +363,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     $http.get('php/getPlannerProfiles.php')
     .then(function(response) {   
 		$scope.plannerprofiles = response.data;
-        
+                        
     //SET ATTRIBUTES OF PAGIATION DIRECTIVE ON SEARCH PAGE
 
     $scope.plannersFilterd=[];

@@ -588,6 +588,36 @@ footer>div>ul>li {
     padding-top:5px;
 }
 
+.blogexcerpt-plannerreply-title {
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align:center;
+    font-size:16px;
+}
+
+.blogexcerpt-plannerbio {
+    display:inline;
+}
+
+.blogexcerpt-plannerbio-photo {
+    width:75px;
+    height:75px;
+    float: left;
+    margin-right:10px;
+}
+
+.blogexcerpt-plannerbio-text {
+
+}
+
+.blogexcerpt-plannerbio-intro {
+    padding: 0px;
+}
+
+.blogexcerpt-plannerreply {
+    float:clear;
+}
+
 #flag {
   width: 70px;
   height: 70px;

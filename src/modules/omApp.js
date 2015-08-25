@@ -59,10 +59,20 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     .when('/stock-versus-property-investing', {
         templateUrl: 'pages/blog/5-Facts-You-Need-To-Know-Before-Deciding-Between-Stock-Market-and-Property-Investment.html',
         controller: 'resourcesController'
-    })    
+    })
+    
+    .when('/stock-versus-property-investing_planner-reply', {
+        templateUrl: 'pages/blog/stock-versus-property-investing_planner-reply.html',
+        controller: 'resourcesController'
+    })     
 
     .when('/what-you-need-to-know-about-robo-advice', {
         templateUrl: 'pages/blog/what-you-need-to-know-about-robo-advice.html',
+        controller: 'resourcesController'
+    }) 
+    
+    .when('/what-you-need-to-know-about-robo-advice_planner-reply', {
+        templateUrl: 'pages/blog/what-you-need-to-know-about-robo-advice_planner-reply.html',
         controller: 'resourcesController'
     }) 
     
