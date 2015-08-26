@@ -130,14 +130,14 @@
                     </div>
                     <div ng-show="planner.verified === '1'" class="row">
                         <p class="fullprofile-aboutAndReviews-info">{{planner.valueProp}}</p>
-                        <div ng-repeat="comments in plannerComments | filter:  {pid: pid}:true |limitTo:1">
+                        <!--<div ng-repeat="comments in plannerComments | filter:  {pid: pid}:true |limitTo:1">
                             <p>{{planner.plannerfirstname}} has written {{comments.total_comments}} article<span ng-show="comments.total_comments > 1">s</span> for Objective Money. Click the links below to see what <span ng-hide="planner.plannergender !== 'male'">he</span><span ng-hide="planner.gender !== 'female'">she</span> has to say:</p>
                         </div>
                         <div ng-repeat="comments in plannerComments | filter:  {pid: pid}:true">
                             <ul>
                                 <li><a href="#/{{ comments.article_url }}_planner-reply" class="blogexcerpt-link" target="_blank">{{comments.article_title}}</a></li>
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
                     <div ng-show="planner.verified === '0'" class="row">
                         <p class="fullprofile-aboutAndReviews-info">{{planner.plannerfirstname}} has not verified this profile. We have done our best to ensure accuracy of the information, but can't be sure.</p>
