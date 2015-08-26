@@ -4,8 +4,8 @@
         <div ng-show="popoutOpen" class="fullprofilepopout">
             <div class="fullprofilepopout-text">
                 <p ng-click="closePopout(); setPopoutOpen()" class="signupBox-close pull-right"><b>&times;</b></p>
-                <p>Request a <b>free, no-strings attached</b> exploratory meeting with {{ planner.plannerfirstname }}.</p>
-                <button ng-click="requestMeeting()" class="fullprofilepopout-button">REQUEST A MEETING&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar-o"></i></button>
+                <p>Request a <b>free, no-strings attached</b> exploratory call with {{ planner.plannerfirstname }}.</p>
+                <button ng-click="requestMeeting()" class="fullprofilepopout-button">REQUEST A CALLBACK&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar-o"></i></button>
             </div>
         </div>
         <div class="col-sm-4 fullprofile">
@@ -21,7 +21,7 @@
                     <p id="fullprofileheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
             </div>
                 <div ng-show="planner.verified === '1'" class="row col-sm-12 fullprofilefooter-enquire">
-                    <p id="searchprofilefooter-text"><a href="#/enquire{{ planner.pid }}" class="searchprofilefooter-link">REQUEST A MEETING&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar-o"></i></a></p>
+                    <p id="searchprofilefooter-text"><a href="#/enquire{{ planner.pid }}" class="searchprofilefooter-link">REQUEST A CALLBACK&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar-o"></i></a></p>
                 </div>
             <div class="row col-sm-12 fullprofilebody">
                 <p id="fullprofilebody-infoheader"><b>HIGHEST QUALIFICATION</b>
