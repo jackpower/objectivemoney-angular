@@ -228,7 +228,13 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         title: 'Introduction To Robo Advice | Objective Money',
         description:'Shaun Gravett, a qualified CFP professional, provides his views on the advantages and disadvantages of robo-advisors for average South Africans',
         robots: 'index, follow'
-    })     
+    }) 
+    
+    .when('/6-things-that-online-data-tells-you-about-financial-planning', {
+        title: 'What The Internet Tells Us About Financial Planning | Objective Money',
+        description:'Objective Money scoured the Google and Twitter databases to see what they could tell us about financial planning in South Africa. For starters, we found 6 interesting facts.',
+        robots: 'index, follow'
+    }) 
     
     .when('/login', {
         title: 'Financial Planner Registration | Objective Money',
