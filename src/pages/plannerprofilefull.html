@@ -11,10 +11,10 @@
         <div class="col-sm-4 fullprofile">
             <div class="row fullprofileheader col-sm-12">
                 <div ng-show="planner.verified === '1'">
-                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png" alt="{{planner.plannerfirstname}} {{planner.plannersurname}}, Financial Planner, South Africa"/>
                 </div>
                 <div ng-show="planner.verified === '0'">
-                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png"/>
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png"/ alt="{{planner.plannerfirstname}} {{planner.plannersurname}}, Financial Planner, South Africa">
                 </div>
                     <p id="fullprofileheader-name">{{ planner.plannerfirstname }} {{ planner.plannersurname }}</p>
                     <p id="fullprofileheader-company">{{ planner.company }}</p>

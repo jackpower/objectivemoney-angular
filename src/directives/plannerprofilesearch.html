@@ -26,10 +26,10 @@
         <div ng-class="{ 'col-sm-6 searchprofilelarge': searchData.windowWidth >= 400, 'col-sm-6 searchprofilesmall': searchData.windowWidth < 400 }">
             <div class="searchprofileheader">
                 <div ng-show="planner.verified === '1'">
-                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png" alt="{{planner.plannerfirstname}} {{planner.plannersurname}}, Financial Planner, South Africa"/>
                 </div>
                 <div ng-show="planner.verified === '0'">
-                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png"/>
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png" alt="{{planner.plannerfirstname}} {{planner.plannersurname}}, Financial Planner, South Africa"/>
                 </div>
                 <!--<div class="pull-right searchprofileheader-verifiedIconDiv">
                     <div class="searchprofileheader-verifiedIconDiv-container">
@@ -184,10 +184,10 @@
         <div ng-class="{ 'col-sm-6 searchprofilelarge': searchData.windowWidth >= 400, 'col-sm-6 searchprofilesmall': searchData.windowWidth < 400 }">
             <div class="searchprofileheader">
                 <div ng-show="planner.verified === '1'">
-                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png" alt="{{planner.plannerfirstname}} {{planner.plannersurname}}, Financial Planner, South Africa"/>
                 </div>
                 <div ng-show="planner.verified === '0'">
-                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png"/>
+                <img class="searchprofileheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/unknown.png" alt="{{planner.plannerfirstname}} {{planner.plannersurname}}, Financial Planner, South Africa"/>
                 </div>
                 <!--<div class="pull-right searchprofileheader-verifiedIconDiv">
                     <div class="searchprofileheader-verifiedIconDiv-container">

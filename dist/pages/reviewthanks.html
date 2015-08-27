@@ -4,7 +4,7 @@
         <div class="review row">
             <div class="col-sm-12">
                 <div class="row reviewheader">
-                        <img class="reviewheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png"/>
+                        <img class="reviewheader-photo img-circle img-responsive" ng-src="img/plannerprofiles/{{ planner.photo }}.png" alt="{{planner.plannerfirstname}} {{planner.plannersurname}}, Financial Planner, South Africa"/>
                         <p id="reviewheader-name">{{ planner.plannerfirstname }} {{ planner.plannersurname }}</p>
                         <p id="reviewheader-company">{{ planner.company }}</p>
                         <p id="reviewheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
