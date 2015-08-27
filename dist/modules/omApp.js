@@ -211,12 +211,24 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         description:'Deciding Between Stock Market And Property Investing? This Article Explains The Key Differences Between Them',
         robots: 'index, follow'
     })    
+    
+    .when('/stock-versus-property-investing_planner-reply', {
+        title: 'Stock Market Or Property Investing | Objective Money',
+        description:'Shaun Gravett, a qualified CFP professional, gives his views on property versus stock market investing',
+        robots: 'index, follow'
+    })      
 
     .when('/what-you-need-to-know-about-robo-advice', {
         title: 'Introduction To Robo Advice | Objective Money',
         description:'Robo-advice will be coming to South Africa soon. Dont get caught up in the hype, this article explains what robo-advice is and is not',
         robots: 'index, follow'
     }) 
+    
+    .when('/what-you-need-to-know-about-robo-advice_planner-reply', {
+        title: 'Introduction To Robo Advice | Objective Money',
+        description:'Shaun Gravett, a qualified CFP professional, provides his views on the advantages and disadvantages of robo-advisors for average South Africans',
+        robots: 'index, follow'
+    })     
     
     .when('/login', {
         title: 'Financial Planner Registration | Objective Money',
