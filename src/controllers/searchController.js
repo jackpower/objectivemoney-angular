@@ -118,10 +118,10 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             Data.toast(results);
             if (results.status == "success") {
                 switch (window.location.hash) {
-                case "#!/plannerenquiry" + $routeParams.id:
+                case "#/plannerenquiry" + $routeParams.id:
                 $location.path('/enquire' + $routeParams.id);
                 break;
-                case "#!/plannerrating" + $routeParams.id:
+                case "#/plannerrating" + $routeParams.id:
                 $location.path('/review' + $routeParams.id);
                 break;
                 };
@@ -140,11 +140,11 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             if (results.status == "success") {
                 switch (window.location.hash) {
     //If planner enquiry log in page then redirect to enquiry page
-                case "#!/plannerenquiry" + $routeParams.id:
+                case "#/plannerenquiry" + $routeParams.id:
                 $location.path('/enquire' + $routeParams.id);
                 break;
     //If planner review log in page then redirect to review page
-                case "#!/plannerrating" + $routeParams.id:
+                case "#/plannerrating" + $routeParams.id:
                 $location.path('/review' + $routeParams.id);
                 break;
                 };

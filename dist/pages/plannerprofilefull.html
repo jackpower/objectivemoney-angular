@@ -21,7 +21,7 @@
                     <p id="fullprofileheader-address"><i>{{ planner.addressCity | lowercase | capitalize }}, {{ planner.addressState }}</i></p>
             </div>
                 <div ng-show="planner.verified === '1'" class="row col-sm-12 fullprofilefooter-enquire">
-                    <p id="searchprofilefooter-text"><a href="#!/enquire{{ planner.pid }}" class="searchprofilefooter-link">REQUEST A CALLBACK&nbsp;&nbsp;&nbsp;<i class="fa fa-phone"></i></a></p>
+                    <p id="searchprofilefooter-text"><a href="#/enquire{{ planner.pid }}" class="searchprofilefooter-link">REQUEST A CALLBACK&nbsp;&nbsp;&nbsp;<i class="fa fa-phone"></i></a></p>
                 </div>
             <div class="row col-sm-12 fullprofilebody">
                 <p id="fullprofilebody-infoheader"><b>HIGHEST QUALIFICATION</b>
@@ -135,13 +135,13 @@
                         </div>
                         <div ng-repeat="comments in plannerComments | filter:  {pid: pid}:true">
                             <ul>
-                                <li><a href="#!/{{ comments.article_url }}_planner-reply" class="blogexcerpt-link" target="_blank">{{comments.article_title}}</a></li>
+                                <li><a href="#/{{ comments.article_url }}_planner-reply" class="blogexcerpt-link" target="_blank">{{comments.article_title}}</a></li>
                             </ul>
                         </div>
                     </div>
                     <div ng-show="planner.verified === '0'" class="row">
                         <p class="fullprofile-aboutAndReviews-info">{{planner.plannerfirstname}} has not verified this profile. We have done our best to ensure accuracy of the information, but can't be sure.</p>
-                        <p class="fullprofile-aboutAndReviews-info">If you are {{planner.plannerfirstname}} and would like to verify your profile, please <a href="#!/login">let us know</a>.</p>
+                        <p class="fullprofile-aboutAndReviews-info">If you are {{planner.plannerfirstname}} and would like to verify your profile, please <a href="#/login">let us know</a>.</p>
                     </div>
                 </div>
                 <div class="row fullprofile-aboutAndReviews-customerReviews">
@@ -152,7 +152,7 @@
                         </p>  
                         </div>
                         <div class="col-sm-4 fullprofilefooter">
-                            <p id="searchprofilefooter-text"><a href="#!/review{{ planner.pid }}" class="searchprofilefooter-link">LEAVE A REVIEW&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></a></p>
+                            <p id="searchprofilefooter-text"><a href="#/review{{ planner.pid }}" class="searchprofilefooter-link">LEAVE A REVIEW&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></a></p>
                         </div>
                     </div>
                     <div class="fullprofile-aboutAndReviews-reviews">
