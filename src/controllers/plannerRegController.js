@@ -9,7 +9,7 @@ omApp.controller('plannerRegController', ['$scope', '$location', '$log', 'planne
                 .success(function (result) {
 
                     console.log(result);
-                    $location.path("/signupthanks");
+                    $location.path("signupthanks");
 
                 })
                 .error(function (data, status) {

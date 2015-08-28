@@ -6,7 +6,7 @@ omApp.controller('resourcesController', ['$scope', '$http', '$routeParams', '$lo
     
     $scope.blogCategory = "All";
     $scope.setBlogCategory = function(blogCategory) {
-        $location.path('/resources');
+        $location.path('resources');
         $scope.blogCategory = blogCategory;
     };
     

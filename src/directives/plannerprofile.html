@@ -20,7 +20,7 @@
                 <h3>About {{plannerData.firstname}}</h3><hr>
             </div>
             <div>
-                <a class="btn btn-default btn-md plannerprofilebutton" href="#/plannerenquiry{{ plannerData.id }}" >Meet With {{plannerData.firstname}}</a>
+                <a class="btn btn-default btn-md plannerprofilebutton" href="plannerenquiry{{ plannerData.id }}" >Meet With {{plannerData.firstname}}</a>
             </div>
             <div>
                 <p><b>Highest Qualification:</b>
@@ -97,7 +97,7 @@
                 <h3>Reviews of {{plannerData.firstname}}</h3><hr>
             </div>
             <div>
-                <a class="btn btn-default btn-md plannerprofilebutton" href="#/plannerrating{{ plannerData.id }}" >Leave a Review of {{plannerData.firstname}}</a>
+                <a class="btn btn-default btn-md plannerprofilebutton" href="plannerrating{{ plannerData.id }}" >Leave a Review of {{plannerData.firstname}}</a>
             </div>
             <div class="plannerreviewbox">
                 <div ng-repeat="review in plannerData.reviews | orderBy: 'date':true" class="panel panel-success">

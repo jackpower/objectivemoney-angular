@@ -118,11 +118,11 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             Data.toast(results);
             if (results.status == "success") {
                 switch (window.location.hash) {
-                case "#/plannerenquiry" + $routeParams.id:
-                $location.path('/enquire' + $routeParams.id);
+                case "plannerenquiry" + $routeParams.id:
+                $location.path('enquire' + $routeParams.id);
                 break;
-                case "#/plannerrating" + $routeParams.id:
-                $location.path('/review' + $routeParams.id);
+                case "plannerrating" + $routeParams.id:
+                $location.path('review' + $routeParams.id);
                 break;
                 };
             }
@@ -140,12 +140,12 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             if (results.status == "success") {
                 switch (window.location.hash) {
     //If planner enquiry log in page then redirect to enquiry page
-                case "#/plannerenquiry" + $routeParams.id:
-                $location.path('/enquire' + $routeParams.id);
+                case "plannerenquiry" + $routeParams.id:
+                $location.path('enquire' + $routeParams.id);
                 break;
     //If planner review log in page then redirect to review page
-                case "#/plannerrating" + $routeParams.id:
-                $location.path('/review' + $routeParams.id);
+                case "plannerrating" + $routeParams.id:
+                $location.path('review' + $routeParams.id);
                 break;
                 };
             }
@@ -157,7 +157,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         Data.get('logout').then(function (results) {
             Data.toast(results);
     //Once logged out redirect to search page
-            $location.path('/search');
+            $location.path('search');
         });
     };
     
@@ -173,14 +173,14 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
             .success(function (result) {
 
                 console.log(result);
-                $location.path('/enquirythanks' + $routeParams.id);
+                $location.path('enquirythanks' + $routeParams.id);
 
 
             })
             .error(function (result) {
 
                 console.log(result);
-                $location.path('/enquire' + $routeParams.id);
+                $location.path('enquire' + $routeParams.id);
 
             });
     };
@@ -207,7 +207,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
                 .success(function (result) {
 
                     console.log(result);
-                    $location.path("/mailinglistthanks");
+                    $location.path("mailinglistthanks");
 
                 })
                 .error(function (data, status) {
@@ -259,7 +259,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         $http.post('php/postReview.php',{ 'reviews' : $scope.reviews, 'userid' : $scope.userid, 'pid': $scope.pid, 'name' : $scope.name })
             .success(function (result) {
                 console.log(result);
-                $location.path('/reviewthanks' + $routeParams.id);
+                $location.path('reviewthanks' + $routeParams.id);
 
             })
             .error(function (data, status) {
@@ -1075,7 +1075,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
     };
     
     $scope.requestMeeting = function() {
-        $location.path('/enquire' + $scope.plannerprofiles.pid);
+        $location.path('enquire' + $scope.plannerprofiles.pid);
     };
     
     $scope.searchquery.addressCompleted = false;
