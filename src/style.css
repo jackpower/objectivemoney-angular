@@ -1293,6 +1293,16 @@ footer>div>ul>li {
 }
 
 
+.homepage-body-featured {
+    margin-bottom:10px;
+}
+
+.homepage-body-featured-image{
+    margin-left:auto;
+    margin-right:auto;
+    display:inherit;
+}
+
 .homepage-body-header{
     background-color: #203d6c;
     text-align:center;
