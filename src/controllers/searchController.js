@@ -1,7 +1,6 @@
 omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$window', '$location', 'searchquery', 'enquiry', 'reviews', '$http', 'Data','$timeout', '$anchorScroll', '$modal', '$log', function($scope, $routeParams, $rootScope, $window, $location, searchquery, enquiry, reviews, $http, Data, $timeout, $anchorScroll, $modal, $log) {
 
     //Create empty objects for users searches, enquiries and reviews
-    
     $scope.searchquery = {};
     $scope.enquiry = {};
     $scope.reviews = {};

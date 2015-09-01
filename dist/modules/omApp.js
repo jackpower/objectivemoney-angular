@@ -149,7 +149,7 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     })
     
     .when('/feedback', {
-        templateUrl: 'pages/customerfeedback.html',
+        templateUrl: 'pages/customerFeedback.html',
         controller: 'customerFeedbackController'
     })
     

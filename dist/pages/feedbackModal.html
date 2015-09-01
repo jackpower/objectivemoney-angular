@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <p id="modal-heading"><b>Have you found what you are looking for?</b></p>
+
+    <div class="form-group">
+        <label class="plannerSearch-question" for="monthlysalary">What is your monthly gross salary?</label>
+            <slider class="plannerSearch-slider" id="monthlysalary" name="monthlysalary" floor="0" ceiling="200000" step="10000" ng-model="searchquery.monthlysalary" analytics-on="click" analytics-event="Monthly Salary" analytics-category="Commands"></slider>
+        <div name="monthlysalary" class="form-control plannerSearch-answer-slider">
+            <span ng-show="searchquery.monthlysalary < 200000">{{ searchquery.monthlysalary | currency : "R" : 0 }}</span>
+            <span ng-show="searchquery.monthlysalary >= 200000">R200,000+</span>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="plannerSearch-question" for="lumpsum">Do you have a lump sum to be advised on, if so how much?</label>
+        <slider class="plannerSearch-slider" id="lumpsum" name="lumpsum" floor="0" ceiling="5000000" step="50000" ng-model="searchquery.lumpsum" analytics-on="click" analytics-event="Lump Sum" analytics-category="Commands"></slider>
+        <div name="lumpsum" class="form-control plannerSearch-answer-slider">
+            <span ng-show="searchquery.lumpsum < 5000000">{{ searchquery.lumpsum | currency : "R" : 0 }}</span>
+            <span ng-show="searchquery.lumpsum >= 5000000">R5,000,000+</span>
+        </div>
+    </div>
+    
+
+    <div ng-class="{ 'modal-postsearch': (searchquery.monthlysalary !== 0 || searchquery.lumpsum !== 0), 'modal-postsearchdisabled': (searchquery.monthlysalary === 0 && searchquery.lumpsum === 0) }">
+        <p id="searchprofilefooter-text"><button class="reviewbody-rating-button" ng-click="ok()">START YOUR SEARCH&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i></button></p>
+    </div>
+    
+    <div ng-show="searchquery.windowWidth >= 500" class="modalInfoIcon"><p>Why We Need This <button popover="Some planners have client asset minimums and we only want to show you planners who are able to serve you" popover-trigger="click" popover-placement="right" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button></p></div>    
+    
+    <div ng-show="searchquery.windowWidth < 500" class="modalInfoIcon"><p>Why We Need This <button popover="Some planners have client asset minimums and we only want to show you planners who are able to serve you" popover-trigger="click" popover-placement="bottom" class="modalButton" tabindex="0"><i class="fa fa-question-circle"></i></button></p></div>       
+    
+</div>

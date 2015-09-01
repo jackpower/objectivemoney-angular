@@ -247,4 +247,16 @@
   <changefreq>monthly</changefreq>
 </url> 
     
+<url>
+  <loc>https://objectivemoney.co.za/feedback</loc>
+  <lastmod>2015-09-01T14:00:10+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>     
+    
+<url>
+  <loc>https://objectivemoney.co.za/feedbackthanks</loc>
+  <lastmod>2015-09-01T14:00:10+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>     
+    
 </urlset>
