@@ -33,6 +33,11 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         controller: 'resourcesController'
     })
     
+    .when('/money-show-objective-money-interview', {
+        templateUrl: 'pages/blog/money-show-objective-money-interview.html',
+        controller: 'resourcesController'
+    })    
+    
     .when('/what-is-the-value-of-a-financial-planner', {
         templateUrl: 'pages/blog/what-is-the-value-of-a-financial-planner.html',
         controller: 'resourcesController'
@@ -141,11 +146,21 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     .when('/mailinglistthanks', {
         templateUrl: 'pages/mailinglistthanks.html',
         controller: 'searchController'
-    })    
+    })
+    
+    .when('/feedback', {
+        templateUrl: 'pages/customerfeedback.html',
+        controller: 'customerFeedbackController'
+    })
+    
+    .when('/feedbackthanks', {
+        templateUrl: 'pages/feedbackthanks.html',
+        controller: 'searchController'
+    })
     
     .when('/tester', {
         templateUrl: 'pages/tester.html',
-        controller: 'searchController'
+        controller: 'customerFeedbackController'
     }) 
     
     .otherwise({
@@ -177,6 +192,12 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         description:'Learn Tried And Tested Techniques To Determine If Your Planner Is Credible',
         robots: 'index, follow'
     })
+    
+    .when('/money-show-objective-money-interview', {
+        title: "Interview With Bruce Whitfied On 702's Money Show | Objective Money",
+        description:"Objective Money was interviewed by Bruce Whitfield of 702's Money Show for a new feature they are running called the Friday File. It was a great experience and a lot of fun! We were dubbed 'Trip Advisor For Financial Planners' and covered a lot about Objective Money from how it works to how we are doing.",
+        robots: 'index, follow'
+    }) 
     
     .when('/what-is-the-value-of-a-financial-planner', {
         title: 'Is A Financial Planner Worth The Fees | Objective Money',
@@ -308,7 +329,19 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
         title: 'Get Information On Financial Planning | Objective Money',
         description:'',
         robots: 'index, follow'
-    })      
+    })   
+    
+    .when('/feedback', {
+        title: 'Leave Feedback Of Objective Money',
+        description:'',
+        robots: 'noindex, nofollow'
+    })   
+    
+    .when('/feedbackthanks', {
+        title: 'Thanks For Leaving Feedback',
+        description:'',
+        robots: 'noindex, nofollow'
+    })   
     
     .otherwise({
         title: 'Compare Reviewed Financial Planners | Objective Money',

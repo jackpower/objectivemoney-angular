@@ -65,7 +65,7 @@ module.exports = function(grunt) {
         },
         files: {
           // collapse and minify controllers
-          'dist/controllers/controllers.min.js': [ 'dist/controllers/searchController.js', 'dist/controllers/plannerRegController.js', 'dist/controllers/resourcesController.js'],
+          'dist/controllers/controllers.min.js': [ 'dist/controllers/searchController.js', 'dist/controllers/plannerRegController.js', 'dist/controllers/resourcesController.js', 'dist/controllers/customerFeedbackController.js'],
           // collapse and minify services
           'dist/services/services.min.js': [ 'dist/services/services.js', 'dist/services/data.js'],
           // minify directives

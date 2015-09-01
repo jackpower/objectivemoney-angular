@@ -1303,6 +1303,15 @@ footer>div>ul>li {
     display:inherit;
 }
 
+.blogexcerpt-excerpt-media {
+    display:inherit;    
+    text-align:center;
+}
+
+.blogexcerpt-excerpt-media-audio {
+    width:100%;
+}
+
 .homepage-body-header{
     background-color: #203d6c;
     text-align:center;
@@ -1707,6 +1716,46 @@ footer>div>ul>li {
     margin-right: auto;
 }
 
+.npsButton {
+    border-radius: 0;
+    border: solid 1px rgba(78,78,78,1);
+    background-color: #DBD9D9;
+    color: rgba(78,78,78,1);
+}
+
+.npsButton-info {
+    margin-bottom:25px;
+}
+
+.npsButton:hover {
+    border-radius: 0;
+    border: solid 1px rgba(78,78,78,1);
+    background-color: #7aad28;
+    color: #fff;
+}
+
+.npsButton.active {
+    border-radius: 0;
+    border: solid 1px rgba(78,78,78,1);
+    background-color: #7aad28;
+    color: #fff;
+}
+
+.feedback-body-input{
+    width: 100%;
+    margin-bottom:25px;
+}
+
+.feedback-body-question{
+    color: #f8650d;
+    font-size:16px;
+}
+
+.feedback-body-contactDetails{
+    color: rgb(78,78,78);
+    font-size:12px;
+    font-style: italic;
+}
 /*
 .about {
     margin-top: 60px;

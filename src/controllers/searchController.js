@@ -1083,7 +1083,7 @@ omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$w
         if($scope.searchquery.lat > 0 || $scope.searchquery.lat < 0) {
             $scope.searchquery.addressCompleted = true;
         };
-    };    
+    };  
     
 }]);
 

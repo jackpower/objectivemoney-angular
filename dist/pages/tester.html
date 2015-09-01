@@ -1,114 +1,64 @@
-<div class="jumbotron2">
-    <div class="container">
-        <div class="homepage-jumbo-info2 col-sm-offset-7 col-sm-5">
-            <div class="homepage-jumbo-info-header2">
-                <h1>We'll help you find a <b>financial planner</b>, hassle-free</h1>
+<div class="container">
+    <div class="plannerlogin-header">
+        <h2 class="plannerlogin-header-text">If you have any feedback or suggestions for us, we would love to hear from you!</h2>
+        <h2 class="plannerlogin-header-text">Just complete the sections that are relevant to you below.</h2>
+    </div>
+    <div class="plannerlogin-body">
+    <form name="customerFeedback" ng-submit="customerFeedback.$valid && submit()" novalidate>
+        
+        <!-- Email Address -->
+        <div class="form-group" ng-class="{ 'has-error': submitted && customerFeedback.email.$invalid}">
+            <label class="feedback-body-question" for="email">E-Mail Address</label>
+            <input type="email" class="form-control feedback-body-input" name="email" id="email" ng-model="feedback.email" required>
+            <div class="help-block" ng-messages="customerFeedback.email.$error" ng-if="submitted">
+                <p ng-message="required">This is required.</p>
+                <p ng-message="email">Please enter a valid e-mail.</p>
             </div>
-            <div class="homepage-jumbo-info-box2">
-                <h2 class="homepage-jumbo-info-boxheader2"><b>Compare customer reviewed planners</b> in your area</h2>
-                <input vs-google-autocomplete="options"         
-                ng-model="searchquery.address.name" 
-                vs-street-number="searchquery.address.streetNumber" 
-                vs-street="searchquery.address.street"
-                vs-city="searchquery.address.city"
-                vs-state="searchquery.address.state"
-                vs-country-short="searchquery.address.countryCode"
-                vs-country="searchquery.address.country"
-                vs-latitude="searchquery.lat"
-                vs-longitude="searchquery.long" 
-                type="text" 
-                name="address"
-                id="address"
-                ng-class="{ 'form-control homepage-jumbo-info-boxinput2-inactive': !searchquery.addressCompleted, 'form-control homepage-jumbo-info-boxinput2': searchquery.addressCompleted }"
-                placeholder="In which city / suburb do you live?">
-            </div>
-            <div>
-                <button ng-click="linkButton('/search')" ng-class="{ 'homepage-jumbo-info-boxbutton2': !searchquery.addressCompleted, 'homepage-jumbo-info-boxbutton2-active': searchquery.addressCompleted }">SEARCH NOW&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i></button>
-            </div>
+        </div>        
+        
+        <!-- Ask whether a customer found what they were looking for -->
+        <label class="feedback-body-question" for="find">Did You Find What You Were Looking For Today?</label>
+        <textarea rows="3" class="form-control feedback-body-input" name="find" id="find" form="customerFeedback" ng-model="feedback.find"></textarea>
+        <!-- Ask what could have been better -->
+        <label class="feedback-body-question" for="improve">How Could We Have Made Your Experience Better?</label>
+        <textarea rows="3" class="form-control feedback-body-input" name="improve" id="improve" form="customerFeedback" ng-model="feedback.improve"></textarea>
+        
+        <!-- Net Promoter Score -->
+        <label class="feedback-body-question" for="NPS">How Likely Is It That You Would Recommend Objective Money To A Friend Or Colleague ?</label>
+        <br>
+        <!-- Net Promoter Score Input -->
+        <div class="btn-group">
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="1" uncheckable>1</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="2" uncheckable>2</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="3" uncheckable>3</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="4" uncheckable>4</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="5" uncheckable>5</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="6" uncheckable>6</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="7" uncheckable>7</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="8" uncheckable>8</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="9" uncheckable>9</label>
+            <label class="btn btn-success npsButton" ng-model="feedback.npsScore" btn-radio="10" uncheckable>10</label>
+            <p class="npsButton-info">1 = Not at all likely, 10 = Extremely likely</p>
         </div>
-    </div>
-</div>
-
-<div class="container-fluid homepage-body-steps">
-    <div class="col-sm-12 homepage-body-header">
-        <h2><b>Find The Right Planner With 3 Simple Steps</b></h2>
-    </div>
-
-    <div class="col-sm-4 homepage-body-steps-info">
-            <h4 class="homepage-body-icons"><img id="homepage-body-icons" src="img/icons/search.png"></img></h4>
-            <h3 class="homepage-body-icons-title"><b>SEARCH</b></h3>
-            <p class="homepage-body-icons-text">Search for independently verified planners in your local area that can meet your requirements.</p>
-    </div>
-
-    <div class="col-sm-4 homepage-body-steps-info">
-            <h4 class="homepage-body-icons"><img id="homepage-body-icons" src="img/icons/compare.png"></img></h4>
-            <h3 class="homepage-body-icons-title"><b>COMPARE</b></h3>
-            <p class="homepage-body-icons-text">Compare planners based on their offerings, qualifications and actual customer reviews.</p>
-    </div>
-
-    <div class="col-sm-4 homepage-body-steps-info">
-        <h4 class="homepage-body-icons"><img id="homepage-body-icons" src="img/icons/schedule.png"></img></h4>
-        <h3 class="homepage-body-icons-title"><b>SCHEDULE</b></h3>
-        <p class="homepage-body-icons-text">Click to automatically schedule a meeting with your chosen planner at a time that suits you.</p>
-    </div>
-</div>
-    <div class="row homepage-body-carousel-header">
-        <div class="col-sm-12 homepage-body-header">
-        <h2><b>Our Planners Partner With The Biggest Companies In South Africa</b></h2>
-        </div>
-    </div>
-    <div class="row homepage-body-carousel">
-        <carousel interval="myInterval" disable-animation="true">
-            <slide ng-repeat="slide in slides" active="slide.active">
-              <img ng-src="img/sitephotos/{{slide.image}}.png" alt="{{slide.image}}" style="margin:auto;">
-            </slide>
-        </carousel>
-    </div>
-
-    <div class="container-fluid homepage-body-video">
-            <p class="homepage-body-video-text">Watch our short video to see how it works in more detail</p>
-                <div class="videoWrapper">
-                    <!-- Copy & Pasted from YouTube -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-rsr45s2mws" frameborder="0" allowfullscreen></iframe>
+        
+        <!-- Follow Up Details -->
+        <label class="feedback-body-question" for="contactDetails">We Would Love To Understand More About Your Feedback By Speaking To You Directly. If You Are Happy For Us To Contact You Please Enter Your Numer Below.</label>
+        
+        <!-- Phone Number -->
+        <div class="form-group" ng-class="{ 'has-error': submitted && customerFeedback.phoneNumber.$invalid && customerFeedback.phoneNumber.$dirty}">
+                <input type="tel" class="form-control feedback-body-input" name="phoneNumber" id="phoneNumber" ng-model="feedback.phoneNumber" ng-minlength="10" ng-maxlength="10" ng-pattern="/^\d+$/" placeholder="Contact Number"/>
+                <div class="help-block" ng-messages="customerFeedback.phoneNumber.$error" ng-if="submitted">
+                    <p ng-message="minlength">The number you entered is too short.</p>
+                    <p ng-message="maxlength">The number you entered is too long.</p>
+                    <p ng-message="pattern">Please only use numbers.</p>  
                 </div>
-    </div>
+        </div>
 
-<div class="container-fluid homepage-body-steps">
-    <div class="col-sm-12 homepage-body-header">
-        <h2><b>How Objective Money Helps You</b></h2>
-    </div>
-    <div class="row">
-    <div class="col-sm-4 homepage-body-steps-info">
-        <h4 class="homepage-body-icons"><img id="homepage-body-icons-how" src="img/icons/independent.png"></img></h4>
-        <h3 class="homepage-body-icons-title"><b>INDEPENDENT</b></h3>
-        <p class="homepage-body-icons-text">All of our advisers have been independently verified, helping you to avoid any sharks.</p>
-    </div>
+        <!-- Submission -->
+        <div class="reviewbody-button">
+            <p id="searchprofilefooter-text"><button class="reviewbody-rating-button" ng-click="submitted=true">SUBMIT&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i></button></p>
+        </div>
 
-    <div class="col-sm-4 homepage-body-steps-info">
-            <h4 class="homepage-body-icons"><img id="homepage-body-icons-how" src="img/icons/user-review.png"></img></h4>
-            <h3 class="homepage-body-icons-title"><b>USER REVIEWED</b></h3>
-            <p class="homepage-body-icons-text">All of our advisers are reviewed by genuine users, helping you make sure that the adviser is the right match for you.</p>
+    </form>
     </div>
-
-    <div class="col-sm-4 homepage-body-steps-info">
-            <h4 class="homepage-body-icons"><img id="homepage-body-icons-how" src="img/icons/tailored.png"></img></h4>
-            <h3 class="homepage-body-icons-title"><b>TAILORED</b></h3>
-            <p class="homepage-body-icons-text">Search functionality lets you specify your ideal adviser.</p>
-    </div>
-    </div>    
-
-    <div class="row">
-    <div class="col-sm-offset-2 col-sm-4 homepage-body-steps-info">
-        <h4 class="homepage-body-icons"><img id="homepage-body-icons-how" src="img/icons/quick.png"></img></h4>
-        <h3 class="homepage-body-icons-title"><b>QUICK</b></h3>
-        <p class="homepage-body-icons-text">No need for lengthy internet research, enquiry calls or getting hold of friends and family to help you.</p>
-    </div>
-    
-    <div class="col-sm-offset-right-2 col-sm-4 homepage-body-steps-info">
-        <h4 class="homepage-body-icons"><img id="homepage-body-icons-how" src="img/icons/free-2.png"></img></h4>
-        <h3 class="homepage-body-icons-title"><b>FREE</b></h3>
-        <p class="homepage-body-icons-text">Our service is entirely free of charge.</p>
-    </div>
-    </div>
-
 </div>
