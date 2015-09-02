@@ -1703,6 +1703,10 @@ footer>div>ul>li {
     cursor: pointer;
 }
 
+.boldText {
+    font-weight: bold;
+}
+
 .plannerlogin-header-list{
     padding-top:10px;
 }
