@@ -1,0 +1,369 @@
+/*
+Theme Name: dazzling-child
+Theme URI: http://mysite.com/
+Description: This is a custom child theme I have created.
+Author: My Name
+Author URI: http://mysite.com/
+Template: dazzling
+Version: 0.1
+*/
+
+@import url("../dazzling/style.css");
+@import url('http://fonts.googleapis.com/css?family=Lato');
+
+/* CHANGE DEFAULT TEXT COLOR, FONT AND LINKS */
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: rgba(78,78,78,1);
+}
+
+a {
+    cursor: pointer;
+    color:rgba(78,78,78,1);
+}
+
+a:hover{
+    color: #f8650d;
+}
+
+a.btn.btn-default.read-more {
+    cursor: pointer;
+    color:rgba(78,78,78,1);
+}
+
+a.btn.btn-default.read-more:hover {
+    cursor: pointer;
+    color:#fff;
+    background-color: #f8650d;
+}
+
+
+.entry-title a {
+    color:#203d6c;
+}
+
+.entry-title a:hover {
+    color:#f8650d;
+}
+
+/* CHANGE COLOR OF WIDGET TITLE FONTS */
+
+.widget-title {
+    color:#203d6c;
+}
+
+/* CHANGE COLOR SCHEME ON SEARCH BUTTON */
+
+button#searchsubmit {
+    cursor: pointer;
+    color:#fff;
+    background-color: #7aad28;
+    border-color: #7aad28;
+}
+
+button#searchsubmit:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #f8650d;
+    border-color: #f8650d;
+}
+
+/* IN-LINE PLANNER INFO TEXT IN BLOG */
+
+.planner_response_info {
+  display:inline-block;
+  margin-left:5px;
+  position: relative;
+  top: 50%;
+  transform: translateY(35%);    
+}
+
+/* VERTICAL ALIGN TEXT IN PLANNER REPLY */
+
+.vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(10%);
+}
+
+/* CHANGE WIDTH OF FOLLOW BUTTON */
+
+.dwqa-single-question .dwqa-question .dwqa-favourite {
+    width:13%;
+}
+
+/* REMOVE QUESTION FILTERS IN DWQA */
+
+.dwqa-list-question .filter .status-pending-review a, .dwqa-list-question .filter .pending-review a {
+    display:none;
+}
+
+.dwqa-list-question .filter .status-overdue a, .dwqa-list-question .filter .overdue a {
+    display:none;
+}
+
+.dwqa-list-question .filter .status-closed a, .dwqa-list-question .filter .closed a {
+    display:none;
+}
+
+.dwqa-list-question .filter .status-resolved a, .dwqa-list-question .filter .resolved a {
+    display:none;
+}
+
+.dwqa-list-question .filter .status-replied a, .dwqa-list-question .filter .replied a {
+    display:none;
+}
+
+/* Customise Footer */
+
+.copyright {
+    display:none;
+}
+
+/* Customise DWQA Title Font Color */
+
+.dwqa-list-question .dwqa-header .dwqa-title {
+    color:#203d6c;
+}
+
+/* Customise Ask a Question Colors */
+
+a.dwqa-btn.dwqa-btn-success {
+    cursor: pointer;
+    color:#fff;
+    background-color: #7aad28;
+    border-color: #7aad28;
+}
+
+a.dwqa-btn.dwqa-btn-success:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #f8650d;
+    border-color: #f8650d;
+}
+
+/* Change DWQA page title style */
+
+.entry-title {
+    color:#203d6c;
+}
+
+/* Change DWQA answer question style */
+
+.dwqa-headline {
+    color:#203d6c;
+}
+
+/* Change DWQA answer button styles */
+
+input#submit-answer {
+    cursor: pointer;
+    color:#fff;
+    background-color: #7aad28;
+    border-color: #7aad28;
+}
+
+input#submit-answer:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #f8650d;
+    border-color: #f8650d;
+}
+
+input#save-draft-answer {
+    background-color:#e8e8e8;
+    color:rgb(78,78,78);
+}
+
+/* Change DWQA ask question button colors */
+
+input.dwqa-btn.dwqa-btn-success.btn-submit-question.btn.btn-default {
+    cursor: pointer;
+    color:#fff;
+    background-color: #7aad28;
+    border-color: #7aad28;
+}
+
+input.dwqa-btn.dwqa-btn-success.btn-submit-question.btn.btn-default:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #f8650d;
+    border-color: #f8650d;
+}
+
+.footer, .push {
+    min-height: 40px; /* .push must be the same height as .footer */
+}
+
+.footer {
+    border-top: 1px solid rgba(200,200,200,1);
+    padding-top:15px;
+}
+
+#footercontact {
+    color:#cacaca;
+    font-size:12px;
+    text-align:right;
+}
+
+footer>div>ul>li {
+    list-style-type: none;
+    margin: 25px 0px 0px 0px;
+    padding: 0px 10px;
+    display: inline;
+}
+
+/* NAVIGATION */
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-main [class*="navigation"] a,
+.more-link {
+  border: 1px solid #E8E8E8;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: block;
+}
+.site-main [class*="navigation"] a:hover,
+.more-link:hover {
+  color: #fff;
+  background: #1FA67A;
+  text-decoration: none;
+}
+.more-link {
+  float: right;
+  margin: 10px 0;
+}
+.site-main [class*="navigation"] {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+[class*="navigation"] .nav-previous {
+  float: left;
+}
+[class*="navigation"] .nav-next {
+  float: left;
+  text-align: left;
+}
+.navbar.navbar-default {
+  background-color: #7aad28;
+  font-weight: 200;
+  margin-bottom: 0;
+  margin-top: -2px;
+  border-bottom: 1px solid #eee;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  line-height: 50px;
+}
+.navbar > .container .navbar-brand {
+  color: #1FA67A;
+  font-size: 24px;
+  margin: 8px 0;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  border-right: none;
+  border-left: none;
+}
+.navbar {
+  border-radius: 0;
+  min-height:50px;
+}
+.navbar-default {
+  border: none;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #fff;
+  background-color: #7aad28;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #fff;
+  margin-left:10px;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu > li > a {
+  padding: 0px 10px;
+  color: #fff;
+  margin-left:10px;
+}
+.dropdown-menu,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  border: none;
+}
+.dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a {
+  background-color: #7aad28;
+  color: #fff;
+}
+
+.dropdown-menu .divider {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.navbar-nav > li > .dropdown-menu {
+  padding: 0;
+}
+.navbar-nav > li > a {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left:10px;
+}
+
+.navbar-nav > li > a:hover {
+  font-size:16px;
+  color: rgb(78,78,78) !important;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+.nav.navbar-nav {
+  float: left;
+}
+@media (max-width: 767px) {
+  .nav.navbar-nav {
+    float: none;
+  }
+}
+
+#logo img {
+    height: 40px;
+    width: auto;
+    margin: 5px;
+}
+
+.dropdown-menu {
+    background-color: #7aad28;
+    border-radius:0;
+}
+
+.dropdown-menu > li > a {
+    padding: 10px 0;
+}
+
+.dropdown-menu > li > a:hover {
+  font-size:16px;
+  color: rgb(78,78,78) !important;
+  font-weight: bold;
+  padding-right: 10px;
+}

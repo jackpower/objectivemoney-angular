@@ -1,0 +1,150 @@
+/*
+Theme Name: apex-child
+Theme URI: http://mysite.com/
+Description: This is a custom child theme I have created.
+Author: My Name
+Author URI: http://mysite.com/
+Template: apex
+Version: 0.1
+*/
+
+@import url("../apex/style.css");
+@import url('http://fonts.googleapis.com/css?family=Lato');
+
+body {
+    color:rgb(78,78,78);
+    font-family: 'Lato', sans-serif;
+}
+
+.post-title {
+    color:#203d6c;
+}
+
+a:link, a:visited {
+    color:#203d6c;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.more-link:hover, .more-link:active, .more-link:focus {
+    background-color:#f8650d;
+}
+
+.post-content > h3 {
+    color:#f8650d;
+}
+
+.planner_blog_photo {
+    border-radius:50%;
+}
+
+.col-sm-6 {
+    position:relative;
+    min-height:1px;
+}
+
+@media (min-width: 768px) {
+.col-sm-6 {
+    width:50%;
+    float:left;
+}
+}
+
+@media (max-width: 768px) {
+.col-sm-6 {
+    width:100%;
+    float:left;
+}
+}
+
+.planner_blog_response {
+    margin-top:10px;
+    margin-bottom:10px;
+    position:relative;
+}
+
+/*NAVBAR*/
+
+.menu-container {
+width:100%;
+margin:0;
+}
+
+.menu-primary-container {
+width:100%;
+margin:0;
+}
+
+.container-fluid {
+    min-height: 50px;
+    padding-left:10px;
+    margin-bottom:75px;
+}
+
+.nav { cursor: pointer; }
+
+.navbar{
+    background-color: #7aad28;
+    border: none;
+    border-radius:0;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: none;
+}
+
+.navbar-inverse .navbar-brand{
+    color:white;
+    display:inline;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:white;
+    font-size:14px;
+    margin-left:10px;
+    line-height:25px;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+    background-color:white;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(78,78,78,1);
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(78,78,78,1);
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+    background-color:#203d6c;
+}
+
+#navbarlogo{
+    height:40px;
+    float:left;
+    margin-top:5px;
+}
+
+@media (max-width: 800px) {
+#navbarlogo{
+display:none;
+}
+}
+
+@media (min-width: 50em) {
+    .menu-primary li {
+        line-height:50px;
+    }
+}
+
+.design-credit {
+    display:none;
+}

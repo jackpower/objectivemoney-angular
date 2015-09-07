@@ -1,4 +1,10 @@
 omApp.controller('searchController', ['$scope', '$routeParams', '$rootScope','$window', '$location', 'searchquery', 'enquiry', 'reviews', '$http', 'Data','$timeout', '$anchorScroll', '$modal', '$log', function($scope, $routeParams, $rootScope, $window, $location, searchquery, enquiry, reviews, $http, Data, $timeout, $anchorScroll, $modal, $log) {
+    
+    $scope.choices = [
+        {name: 'Blog', url:'resources/'},
+        {name:'Ask A Financial Planner', url:'resources/ask-a-financial-planner/'}
+        ];
+
 
     //Create empty objects for users searches, enquiries and reviews
     $scope.searchquery = {};

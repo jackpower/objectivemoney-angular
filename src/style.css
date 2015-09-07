@@ -186,6 +186,55 @@ footer>div>ul>li {
     margin-left:10px;
 }
 
+/* For DropDown Menu */
+a#simple-dropdown {
+    color:white;
+    font-size:14px;
+    margin-left:10px;
+    line-height:50px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+a#simple-dropdown:hover {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(78,78,78,1);
+}
+
+.dropdown-menu {
+    background-color: #7aad28;
+    color:#fff;
+    border-radius:0;
+    margin-top:0;
+    border:none;
+    margin-left: 10px;
+}
+
+.dropdown-menu>li>a:hover {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(78,78,78,1);
+}
+
+.dropdown-menu>li>a {
+    color:white;
+    font-size:14px;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    color:#fff;
+    font-size:14px;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(78,78,78,1); 
+}
+
+/* End Drop Down Menu */
+
 .navbar-inverse .navbar-toggle .icon-bar{
     background-color:white;
 }

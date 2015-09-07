@@ -1,12 +1,8 @@
 //Module
-var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics','metatags', 'googleExperiments', 'angularLoad']);
+var omApp = angular.module('omApp',['ngRoute', 'ui.bootstrap', 'ui.slider', 'vsGoogleAutocomplete', 'ngAnimate', 'ngMessages', 'toaster', 'ngResource', 'angulartics', 'angulartics.google.analytics','metatags', 'angularLoad']);
 
 //Routing
-omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', '$locationProvider', function ($routeProvider, MetaTagsProvider, googleExperimentsProvider, $locationProvider) {
-    
-    googleExperimentsProvider.configure({
-        experimentId: 'PdoI0OY_R-qbuWM3p-aLvQ'
-    });
+omApp.config(['$routeProvider','MetaTagsProvider', '$locationProvider', function ($routeProvider, MetaTagsProvider, $locationProvider) {
         
     $locationProvider
     .html5Mode(true);
@@ -161,7 +157,7 @@ omApp.config(['$routeProvider','MetaTagsProvider', 'googleExperimentsProvider', 
     .when('/tester', {
         templateUrl: 'pages/tester.html',
         controller: 'customerFeedbackController'
-    }) 
+    })
     
     .otherwise({
         redirectTo: '/'
