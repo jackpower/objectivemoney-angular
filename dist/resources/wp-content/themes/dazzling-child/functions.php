@@ -1,13 +1,9 @@
 <?php
 
-/**
- * Bootstrap
- */
-function my_scripts_enqueue() {
-    wp_register_script( 'bootstrap-js', '://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'), NULL, true );
-    wp_register_style( 'bootstrap-css', '://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', false, NULL, 'all' );
-
-    wp_enqueue_script( 'bootstrap-js' );
-    wp_enqueue_style( 'bootstrap-css' );
+function hide_update_notice_to_all_but_admin_users()
+{
+    if (!current_user_can('update_core')) {
+        remove_action( 'admin_notices', 'update_nag', 3 );
+    }
 }
-add_action( 'wp_enqueue_scripts', 'my_scripts_enqueue' );
+add_action( 'admin_head', 'hide_update_notice_to_all_but_admin_users', 1 );

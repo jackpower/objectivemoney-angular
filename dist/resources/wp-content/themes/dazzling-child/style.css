@@ -291,6 +291,12 @@ footer>div>ul>li {
   color: #fff;
   background-color: #7aad28;
 }
+
+.dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+background-color:#a1c568;
+}
+
+
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: #fff;
   margin-left:10px;
@@ -311,7 +317,7 @@ footer>div>ul>li {
 }
 .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a {
-  background-color: #7aad28;
+  background-color:#a1c568;
   color: #fff;
 }
 
@@ -353,7 +359,7 @@ footer>div>ul>li {
 }
 
 .dropdown-menu {
-    background-color: #7aad28;
+    background-color: #a1c568;
     border-radius:0;
 }
 

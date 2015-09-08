@@ -203,7 +203,7 @@ a#simple-dropdown:hover {
 }
 
 .dropdown-menu {
-    background-color: #7aad28;
+    background-color: #a1c568;
     color:#fff;
     border-radius:0;
     margin-top:0;
@@ -215,6 +215,14 @@ a#simple-dropdown:hover {
     font-weight: bold;
     font-size: 16px;
     color: rgba(78,78,78,1);
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color:#a1c568;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background-color:#7aad28;
 }
 
 .dropdown-menu>li>a {
