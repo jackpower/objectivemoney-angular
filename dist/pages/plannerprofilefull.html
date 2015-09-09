@@ -112,6 +112,7 @@
                 <p id="fullprofilebody-info" ng-show="planner.venda === '1'">Venda</p>
                 <p id="fullprofilebody-info" ng-show="planner.swati === '1'">Swati</p>
                 <p id="fullprofilebody-info" ng-show="planner.ndebele === '1'">Ndebele</p>
+                <p id="fullprofilebody-info" ng-show="planner.lang_other.length > 0">{{planner.lang_other}}</p>    
                 <span ng-show="planner.clientMinimum > 0">
                     <p id="fullprofilebody-infoheader"><b>CLIENT MINIMUM</b></p>
                     <p id="fullprofilebody-info">{{ planner.clientMinimum | currency : "R" : 0 }}</p>
